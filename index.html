@@ -68,7 +68,14 @@ section{position:relative}
   background:url(img/hero-ellipse.webp) center top/100% 100% no-repeat;filter:blur(6px);opacity:.95}
 .hero-visual .d1{position:absolute;right:-60px;top:20px;width:340px;opacity:.9}
 .hero-visual .d2{position:absolute;left:-30px;bottom:40px;width:260px;opacity:.8}
-.hero-visual .portrait{position:relative;z-index:2;width:auto;height:min(86vh,86svh,760px);max-width:100%;object-fit:contain;object-position:bottom;margin-right:10%}
+.pwrap{position:relative;z-index:2;margin-right:10%;display:flex;align-items:flex-end;max-width:100%}
+.hero-visual .portrait{position:relative;z-index:2;width:auto;height:min(86vh,86svh,760px);max-width:100%;object-fit:contain;object-position:bottom}
+/* warm golden halo behind the portrait */
+.glow{position:absolute;z-index:1;left:50%;top:6%;width:125%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 50% 42%,rgba(214,170,110,.85) 0%,rgba(201,155,107,.55) 28%,rgba(201,155,107,.22) 50%,rgba(243,238,232,0) 70%);
+  filter:blur(18px);animation:glow 7s ease-in-out infinite alternate}
+.glow::after{content:"";position:absolute;inset:14% 10% 0;background:url(img/hero-ellipse.webp) center top/100% 100% no-repeat;opacity:.55;filter:blur(10px)}
+@keyframes glow{from{transform:translateX(-50%) scale(.96);opacity:.85}to{transform:translateX(-50%) scale(1.04);opacity:1}}
 .badge{position:absolute;z-index:3;right:0;bottom:44px;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);
   border-radius:14px;padding:14px 20px;box-shadow:0 14px 34px -14px rgba(47,63,59,.4);max-width:260px}
 .badge b{display:block;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
@@ -98,7 +105,9 @@ section{position:relative}
 .app-grid .brands{font-weight:600;color:var(--brown)}
 .app-photo{position:relative;display:flex;justify-content:center}
 .app-photo .ell{position:absolute;inset:6% -12% 0;background:url(img/about-ellipse.webp) center/contain no-repeat;filter:blur(8px)}
-.app-photo img.p{position:relative;z-index:1;width:100%}
+.app-photo img.p{position:relative;z-index:1;width:100%;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
+.app-photo::before{content:"";position:absolute;z-index:0;left:50%;top:4%;width:120%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(circle at 50% 40%,rgba(214,170,110,.7) 0%,rgba(201,155,107,.35) 35%,rgba(243,238,232,0) 68%);filter:blur(16px)}
 .app-photo .arr{position:absolute;z-index:2;width:70px;opacity:.55;filter:invert(38%) sepia(25%) saturate(700%) hue-rotate(345deg)}
 .app-photo .arr.a1{left:-40px;bottom:16%}
 .app-photo .arr.a2{right:-40px;top:20%;transform:scaleX(-1)}
@@ -183,6 +192,7 @@ dialog.svc[open]{animation:pop .3s cubic-bezier(.2,.8,.2,1)}
   transition:transform .8s cubic-bezier(.22,.8,.24,1),opacity .8s ease,filter .8s ease,box-shadow .8s ease}
 .track>button.active{opacity:1;filter:none;transform:scale(1);cursor:zoom-in;box-shadow:0 34px 60px -28px rgba(47,63,59,.7)}
 .track>button:not(.active):hover{opacity:.6}
+.track.jumping>button{transition:none}
 .track img{width:100%;height:100%;object-fit:contain;background:#fff}
 .dipl>button{aspect-ratio:3/4}
 .rev>button{height:480px;background:var(--beige-2);padding:16px}
@@ -191,7 +201,6 @@ dialog.svc[open]{animation:pop .3s cubic-bezier(.2,.8,.2,1)}
 .nav button{pointer-events:auto;width:44px;height:44px;border-radius:50%;border:0;background:#9E7F64;color:#fff;cursor:pointer;
   display:grid;place-items:center;box-shadow:0 10px 22px -10px rgba(130,96,67,.8);transition:background .3s,transform .3s,opacity .4s}
 .nav button:hover:not(:disabled){background:var(--brown);transform:scale(1.08)}
-.nav button:disabled{opacity:0;cursor:default;pointer-events:none}
 .nav svg{width:18px;height:18px}
 .dots{display:flex;justify-content:center;gap:10px;margin-top:6px}
 .dots i{width:8px;height:8px;border-radius:50%;background:rgba(47,63,59,.22);cursor:pointer;transition:background .35s,transform .35s}
@@ -235,9 +244,13 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   .hero{min-height:0;display:block}
   .hero .wrap{grid-template-columns:minmax(0,1fr)}
   .hero h1{font-size:clamp(32px,9.6vw,72px)}
-  .hero-text{padding:10px 0 10px;order:1}
-  .hero-visual{order:2;min-height:0;margin:0 -24px}
-  .hero-visual .portrait{width:min(420px,78%);height:auto;margin:0 auto 0 6%}
+  .hero-text{padding:8px 0 56px;order:2}
+  .hero-visual{order:1;min-height:0;margin:0 -24px;padding-top:28px;border-bottom:1px solid rgba(130,96,67,.18)}
+  .hero-visual .d1{width:220px;right:-40px;top:0}
+  .hero-visual .d2{width:180px;left:-30px}
+  .hero-name{margin-top:26px}
+  .pwrap{margin:0 auto;width:min(400px,80%)}
+  .hero-visual .portrait{width:100%;height:auto}
   .badge{right:16px;bottom:20px}
   .cols2{grid-template-columns:1fr;gap:30px;margin:40px 0 56px}
   .pills{grid-template-columns:1fr}
@@ -261,7 +274,17 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   .socials{justify-content:center}
   .about,.services,.faq{padding:70px 0}
   .qa .a{padding-right:0}
-  .badge{max-width:220px;padding:10px 14px}
+  .badge{display:none}
+  .pwrap{width:min(330px,82%)}
+  .pill{padding:18px 20px;font-size:17px;border-radius:12px}
+  .pills{gap:12px;margin-bottom:36px}
+  .app-photo{max-width:250px}
+  .app-photo .arr{width:46px}
+  .app-photo .arr.a1{left:-36px}.app-photo .arr.a2{right:-36px}
+  .app-grid p{font-size:15.5px}
+  .goal{font-size:14.5px;padding:9px 16px;border-radius:14px}
+  .theses li{font-size:15.5px}
+  .h2{font-size:clamp(32px,9vw,44px)}
   .price{max-width:none}
   .slider{--sw:72vw;--gap:14px}
   .slider.s-rev{--sw:80vw}
@@ -297,8 +320,10 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
     <div class="hero-visual">
       <img class="d1" src="img/decor-1.webp" alt="" aria-hidden="true">
       <img class="d2" src="img/decor-2.webp" alt="" aria-hidden="true">
-      <div class="ell" aria-hidden="true"></div>
-      <img class="portrait" src="img/hero-portrait.webp" width="650" height="788" alt="Надежда Родионова, персональный стилист">
+      <div class="pwrap">
+        <div class="glow" aria-hidden="true"></div>
+        <img class="portrait" src="img/hero-portrait.webp" width="650" height="788" alt="Надежда Родионова, персональный стилист">
+      </div>
       <div class="badge"><b>Надежда Родионова</b><span>Персональный стилист<br>Диплом стилиста имиджмейкера</span></div>
     </div>
   </div>
@@ -674,26 +699,36 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
 const ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>';
 document.querySelectorAll('.track').forEach(tr=>{
   const nav=document.querySelector('.nav[data-for="'+tr.id+'"]'), dots=document.querySelector('.dots[data-for="'+tr.id+'"]');
-  const items=[...tr.children];
+  // infinite loop: [clones][originals][clones]; after scrolling stops on a clone we jump silently to its original
+  const orig=[...tr.children], N=orig.length;
+  const mk=(el)=>{const c=el.cloneNode(true);c.setAttribute('aria-hidden','true');c.tabIndex=-1;return c;};
+  orig.slice().reverse().forEach(el=>tr.prepend(mk(el)));
+  orig.forEach(el=>tr.append(mk(el)));
+  const all=[...tr.children];
   nav.innerHTML='<button aria-label="Назад">'+ARROW+'</button><button aria-label="Вперёд" style="transform:scaleX(-1)">'+ARROW+'</button>';
-  dots.innerHTML=items.map((_,i)=>'<i role="button" aria-label="Слайд '+(i+1)+'"></i>').join('');
-  const [prev,next]=nav.children; let cur=-1;
-  const go=i=>{i=Math.max(0,Math.min(items.length-1,i));const it=items[i];
-    tr.scrollTo({left:it.offsetLeft-(tr.clientWidth-it.offsetWidth)/2,behavior:reduce?'auto':'smooth'});};
-  const upd=()=>{
-    const c=tr.scrollLeft+tr.clientWidth/2; let best=0,bd=1e9;
-    items.forEach((it,i)=>{const d=Math.abs(it.offsetLeft+it.offsetWidth/2-c);if(d<bd){bd=d;best=i;}});
-    if(best===cur)return; cur=best;
-    items.forEach((it,i)=>it.classList.toggle('active',i===cur));
-    [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur));
-    prev.disabled=cur===0; next.disabled=cur===items.length-1;
+  dots.innerHTML=orig.map((_,i)=>'<i role="button" aria-label="Слайд '+(i+1)+'"></i>').join('');
+  const [prev,next]=nav.children; let cur=-1, endT=0;
+  const leftOf=i=>all[i].offsetLeft-(tr.clientWidth-all[i].offsetWidth)/2;
+  let target=null, targetT=0;
+  const go=i=>{i=Math.max(0,Math.min(all.length-1,i));target=i;targetT=Date.now();tr.scrollTo({left:leftOf(i),behavior:'smooth'});};
+  const base=()=>(target!==null&&Date.now()-targetT<900)?target:nearest();
+  const nearest=()=>{const c=tr.scrollLeft+tr.clientWidth/2;let b=0,bd=1e9;
+    all.forEach((it,i)=>{const d=Math.abs(it.offsetLeft+it.offsetWidth/2-c);if(d<bd){bd=d;b=i;}});return b;};
+  const setActive=i=>{cur=i;all.forEach((it,k)=>it.classList.toggle('active',k===i));
+    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i%N));};
+  const jump=i=>{ // instant reposition without animation
+    tr.classList.add('jumping');tr.style.scrollBehavior='auto';tr.style.scrollSnapType='none';
+    tr.scrollLeft=leftOf(i);setActive(i);
+    setTimeout(()=>{tr.style.scrollBehavior='';tr.style.scrollSnapType='';tr.classList.remove('jumping');},50);
   };
-  prev.onclick=()=>go(cur-1); next.onclick=()=>go(cur+1);
-  [...dots.children].forEach((d,i)=>d.onclick=()=>go(i));
-  items.forEach((it,i)=>it.addEventListener('click',()=>{i===cur?openLb(it.dataset.lb):go(i);}));
-  tr.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
-  addEventListener('resize',()=>{cur=-1;upd();});
-  upd();
+  const settle=()=>{target=null;const i=nearest();if(i<N||i>=2*N)jump(i%N+N);else if(i!==cur)setActive(i);};
+  const onScroll=()=>{const i=nearest();if(i!==cur)setActive(i);clearTimeout(endT);endT=setTimeout(settle,160);};
+  prev.onclick=()=>go(base()-1); next.onclick=()=>go(base()+1);
+  [...dots.children].forEach((d,i)=>d.onclick=()=>{const b=base();go(b-(b%N)+i);});
+  all.forEach((it,i)=>it.addEventListener('click',()=>{i===nearest()?openLb(it.dataset.lb):go(i);}));
+  tr.addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',()=>jump(cur%N+N));
+  jump(N);
 });
 
 // FAQ: smooth open/close, one at a time
