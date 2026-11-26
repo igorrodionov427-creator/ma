@@ -377,6 +377,56 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   .ct-links{gap:22px;flex-direction:column}
   .ft-grid{grid-template-columns:1fr}
 }
+
+/* ONE SIZE for all section headings (Cormorant kept), everything a bit smaller */
+:root{--h:clamp(30px,3.2vw,46px)}
+body{font-size:15px;line-height:1.7}
+.serif{line-height:1.08}
+.hero h1{font-size:clamp(42px,4.8vw,70px)}
+.hero .val{font-size:15.5px}
+.hero-meta b{font-size:24px}
+.h2,.t-h,.contact .serif,.philo .serif,.statement .serif,.page-top h1{font-size:var(--h)!important}
+.statement .serif{line-height:1.22}
+.srv .nm{font-size:clamp(21px,1.8vw,26px)}
+.svc-cta .serif,.blog .serif{font-size:clamp(22px,2vw,28px)}
+.q-t{font-size:clamp(19px,1.6vw,22px)}
+.qa summary{font-size:20px}
+.quote-line{font-size:20px}
+.facts b{font-size:21px}
+.mnav a:not(.btn){font-size:32px}
+@media (max-width:600px){:root{--h:30px}.hero h1{font-size:clamp(38px,10.5vw,46px)}.srv .nm{font-size:21px}.qa summary{font-size:18px}}
+
+/* «Подход» in the site colours (light, not dark) */
+.philo{background:var(--bg-2)!important;color:var(--ink-2)!important}
+.philo .label{color:var(--accent)!important}
+.philo .serif{color:var(--ink)!important}
+.philo .serif em{color:var(--accent)!important}
+.principles li{border-top-color:var(--line)!important;color:var(--ink-2)!important}
+.principles li:last-child{border-bottom:1px solid var(--line)}
+.principles li::before{color:var(--accent)!important}
+.philo .crumb{color:var(--muted)!important}
+.crumb-row{margin-bottom:6px}
+/* «Обо мне»: text on the left, photo on the right */
+@media (min-width:901px){
+  .about-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;gap:90px!important;align-items:center}
+  .about-text{order:1}.about-photo{order:2}
+}
+.about-photo{max-width:480px;justify-self:end}
+#about.page-first{padding-top:150px!important}
+
+/* multipage */
+.menu a.on{color:var(--ink)}.menu a.on::after{right:0}
+.page-first{padding-top:190px!important}
+.philo.page-first{padding-top:200px!important}
+.crumb{display:inline-flex;gap:10px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+.crumb a{transition:color .3s}.crumb a:hover{color:var(--ink)}
+.philo .crumb{color:rgba(233,228,220,.5)}
+.trust{background:var(--bg)}
+.statement{padding:84px 0 96px!important}
+.contact{padding:120px 0!important}
+.next-pages{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:44px}
+@media (max-width:900px){.page-first{padding-top:120px!important}.statement{padding:64px 0 72px!important}.contact{padding:90px 0!important}}
+@media (max-width:600px){.trust .edu{grid-template-columns:repeat(2,1fr)!important;gap:22px 14px!important}.trust .edu .fr{aspect-ratio:3/4;padding:8px}.edu .ec{display:block!important;font-size:10px}}
 </style>
 </head>
 <body>
@@ -385,19 +435,18 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="На главную"><b>Надежда Родионова</b><span>персональный стилист</span></a>
     <nav class="menu" aria-label="Меню">
-      <a href="#services">Услуги</a><a href="#approach">Подход</a><a href="#about">Обо мне</a><a href="reviews.html">Отзывы</a><a href="#faq">Вопросы</a><a href="#contact">Контакты</a>
+      <a href="services.html">Услуги</a><a href="approach.html">Подход</a><a href="about.html">Обо мне</a><a href="reviews.html">Отзывы</a><a href="faq.html">Вопросы</a>
     </nav>
     <a class="btn line" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться</a>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
   </div>
 </header>
 <nav class="mnav" id="mnav" aria-label="Мобильное меню">
-  <a href="#services">Услуги</a><a href="#approach">Подход</a><a href="#about">Обо мне</a><a href="reviews.html">Отзывы</a><a href="#faq">Вопросы</a><a href="#contact">Контакты</a>
+  <a href="services.html">Услуги</a><a href="approach.html">Подход</a><a href="about.html">Обо мне</a><a href="reviews.html">Отзывы</a><a href="faq.html">Вопросы</a>
   <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться на консультацию</a>
 </nav>
 
 <main>
-<!-- 1. WHO + VALUE -->
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-text">
@@ -406,7 +455,7 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
       <p class="val">Найду лучшие силуэты, помогу скрыть нюансы фигуры и акцентировать достоинства. Онлайн и оффлайн, Москва.</p>
       <div class="hero-cta">
         <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться на консультацию <span class="ar">→</span></a>
-        <a class="link" href="#services">Посмотреть услуги</a>
+        <a class="link" href="services.html">Посмотреть услуги</a>
       </div>
       <div class="hero-meta">
         <div><b>с 2019</b>в стилистике</div>
@@ -422,7 +471,6 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   </div>
 </section>
 
-<!-- 2. PROBLEM -->
 <section class="statement">
   <div class="wrap">
     <p class="serif rv">Знаю, что такое <em>большой гардероб,</em> нечего надеть и <em>импульсивный шопинг</em>.</p>
@@ -433,298 +481,6 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   </div>
 </section>
 
-<!-- 3. SERVICES + PRICES -->
-<section class="sec services" id="services">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="label n">Услуги и стоимость</span>
-      <div>
-        <h2 class="serif h2">Чем я могу <em>помочь</em></h2>
-        <p>Нажмите на услугу, чтобы увидеть, что в неё входит и как проходит работа.</p>
-      </div>
-    </div>
-    <details class="srv" id="srv-1">
-      <summary><span class="no">01</span><span class="nm">Разбор гардероба</span><span class="rs">Увидите, чего не хватает, научитесь комбинировать вещи и освободите место для новых покупок.</span><span class="pr">10 000 ₽ / час</span><span class="tg" aria-hidden="true"></span></summary>
-      <div class="srv-body"><div class="srv-in">
-        <div class="cost-h">Стоимость:</div>
-        <div class="prices">
-        <div class="price"><span>Оффлайн:<br><em>10 000 / час</em></span></div>
-        <div class="price"><span>Онлайн:<br><em>+50% к стоимости</em></span></div>
-        <div class="price"><span>Предоплата <em>10 000</em><br>(не возвращается при отмене &lt; 5 часов)</span></div>
-        <div class="price"><span>Доплата за второго человека</span></div>
-        </div>
-        <div class="info">
-        <div>
-        <h4>Разбор гардероба</h4>
-        <ul><li>Заполнение анкеты + созвон (30 мин).</li><li>Анализ вещей (состояние, актуальность, сочетаемость).</li><li>Распределение на группы: оставить/убрать/подумать.</li><li>Создание 2-3 образов для каждого случая (если возможно).</li><li>Фото комплектов.</li></ul>
-        <h4>Шоппинг-сопровождение</h4>
-        <ul><li>Поиск недостающих вещей по списку.</li></ul>
-        <h4>Стилизация гардероба</h4>
-        <ul><li>Составление готовых образов.</li></ul>
-        <h4>Важно</h4>
-        <ul><li>Разбор — не критика, а поиск «врагов» гардероба.</li><li>Это первый шаг к удобному и стильному гардеробу.</li><li>Процесс требует времени: идеальные вещи ищутся постепенно.</li></ul>
-        </div>
-        <div>
-        <h4>Подготовка к разбору</h4>
-        <ul><li>Ваше присутствие обязательно (если не постоянный клиент).</li><li>Все вещи должны быть доступны (одежда, обувь, аксессуары).</li><li>Зеркало в полный рост, удобная одежда для примерок.</li><li>Время: 2-6 часов (перерыв по необходимости).</li><li>Разбор гардеробной &gt;6 м² может занять несколько дней.</li></ul>
-        <h4>После разбора вы:</h4>
-        <ul><li>Увидите, чего не хватает.</li><li>Научитесь комбинировать вещи.</li><li>Освободите место для новых покупок.</li></ul>
-        </div>
-        </div>
-        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
-      </div></div>
-    </details>
-    <details class="srv" id="srv-2">
-      <summary><span class="no">02</span><span class="nm">Шоппинг-сопровождение</span><span class="rs">Только подходящие, модные и удобные вещи. Экономия времени, денег и нервов.</span><span class="pr">от 20 000 ₽</span><span class="tg" aria-hidden="true"></span></summary>
-      <div class="srv-body"><div class="srv-in">
-        <div class="cost-h">Стоимость:</div>
-        <div class="prices">
-        <div class="price"><span>После разбора:<br><em>20 000</em></span></div>
-        <div class="price"><span>Без разбора:<br><em>30 000</em></span></div>
-        <div class="price"><span>Предоплата <em>10 000</em><br>(не возвращается при отмене &lt; 5 часов)</span></div>
-        </div>
-        <div class="info">
-        <div>
-        <h4>Что входит:</h4>
-        <p><strong>После разбора гардероба:</strong></p>
-        <ul><li>Готовый шоппинг-лист.</li><li>4 часа шоппинга в Москве.</li></ul>
-        <p style="margin-top:10px"><strong>Без разбора:</strong></p>
-        <ul><li>Анкета, анализ фигуры, цели, бюджет.</li><li>4 часа шоппинга в Москве.</li></ul>
-        <h4>Условия:</h4>
-        <ul><li>Предоплата <strong>10 тыс. руб.</strong> (не возвращается при отмене &lt;5 часов).</li><li>При шоппинге без разбора предоплата вносится после определения задач.</li></ul>
-        </div>
-        <div>
-        <h4>Как проходит:</h4>
-        <ul><li>Подбор вещей по списку.</li><li>Оптимальный маршрут по ТЦ.</li><li>Предварительный прешоппинг (по возможности).</li><li>Помощь в примерке, консультации по стилю.</li></ul>
-        <h4>Результат:</h4>
-        <ul><li>Экономия времени, денег и нервов.</li><li>Только подходящие, модные и удобные вещи.</li><li>Уверенность в выборе и новых образах.</li></ul>
-        </div>
-        </div>
-        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
-      </div></div>
-    </details>
-    <details class="srv" id="srv-3">
-      <summary><span class="no">03</span><span class="nm">Стилизация комплектов</span><span class="rs">Фото образов и файл с готовыми образами из ваших вещей.</span><span class="pr">15 000 ₽ / час</span><span class="tg" aria-hidden="true"></span></summary>
-      <div class="srv-body"><div class="srv-in">
-        <div class="cost-h">Стоимость:</div>
-        <div class="prices">
-        <div class="price"><span><em>15 000 / час</em></span></div>
-        </div>
-        <div class="info">
-        <div>
-        <h4>Что входит:</h4>
-        <ul><li>Предварительный созвон</li><li>Определение целей, задач, объема работы</li><li>Составление шоппинг листа по необходимости</li><li>Фото образов</li><li>Файл или ссылка на готовые образы</li></ul>
-        </div>
-        <div>
-        <h4>Как проходит:</h4>
-        <ul><li>Вы предоставляете доступ к вещам которые необходимо застилизовать</li><li>Меряете готовые комплекты</li><li>Я фотографирую</li><li>Без примерки подбор образов не проводится</li></ul>
-        <p style="margin-top:10px;color:var(--muted)">(Стилизация без примерки ведет к образу, с неконтролируемым визуалом)</p>
-        </div>
-        </div>
-        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
-      </div></div>
-    </details>
-    <details class="srv" id="srv-4">
-      <summary><span class="no">04</span><span class="nm">Удаленный шоппинг</span><span class="rs">Фото новых вещей + готовые образы. Примерка в привычной обстановке.</span><span class="pr">50 000 ₽</span><span class="tg" aria-hidden="true"></span></summary>
-      <div class="srv-body"><div class="srv-in">
-        <div class="cost-h">Стоимость:</div>
-        <div class="prices">
-        <div class="price"><span><em>50 000</em></span></div>
-        </div>
-        <div class="info">
-        <div>
-        <h4>Что входит:</h4>
-        <ul><li>Анкетирование</li><li>Определение целей, задач и бюджета</li><li>Анализ ваших внешних данных (если работать начинаем первый раз)</li><li>Составление списка</li><li>Подбор вещей</li><li>Составление файла с картинками и сметой</li><li>Согласование файла</li><li>Закупка вещей</li><li>День примерки</li></ul>
-        <h4>Что вы получаете:</h4>
-        <ul><li>Экономия времени</li><li>Экономия денег на лишние траты</li><li>Примерка в привычной обстановке</li><li>Минимальный контакт с людьми</li><li>Отсутствие суеты</li><li>Классные вещи</li><li>Файл с готовыми образами</li><li>Возможность примерить новые вещи с уже имеющимися</li></ul>
-        </div>
-        <div>
-        <h4>Как проходит:</h4>
-        <ul><li><strong>Анализ</strong> – изучаю ваш запрос, бюджет и подбираю вещи.</li><li><strong>Согласование</strong> – утверждаем список, вы оплачиваете.</li><li><strong>Заказ</strong> – покупаю вещи (ко мне или вам).</li></ul>
-        <h4>Примерка (до 2 часов):</h4>
-        <ul><li>Меряем, составляем образы, фотографируем.</li><li>Возвращаем неподошедшее (чеки – вам).</li><li>Докупаем/меняем размер при необходимости.</li></ul>
-        <h4>Итог:</h4>
-        <ul><li>Фото новых вещей + готовые образы.</li><li>Рекомендации по сочетанию с вашим гардеробом.</li></ul>
-        </div>
-        <p class="remark">Если на примерке у вас появилась необходимость в дополнительном времени для стилизации новых вещей со своими имеющимися вещами - оплачивается по прайсу стилизация комплектов.</p>
-        </div>
-        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
-      </div></div>
-    </details>
-    <details class="srv" id="srv-5">
-      <summary><span class="no">05</span><span class="nm">Консультации (только онлайн)</span><span class="rs">Ясность в вопросах своей внешности: цветотип, тип фигуры, лучшие силуэты.</span><span class="pr">10 000 ₽</span><span class="tg" aria-hidden="true"></span></summary>
-      <div class="srv-body"><div class="srv-in">
-        <div class="cost-h">Стоимость:</div>
-        <div class="prices">
-        <div class="price"><span>Онлайн: <em>10 000</em></span></div>
-        <div class="price"><span>Предоплата <em>100 %</em></span></div>
-        </div>
-        <div class="info">
-        <div>
-        <h4>Что входит в Консультацию:</h4>
-        <ul><li>Анкетирование</li><li>Предварительное снятие запроса, какие цели и задачи</li><li>Анализ ваших внешних данных</li><li>Консультация</li></ul>
-        <h4>Что можете узнать на консультации:</h4>
-        <ul><li>Свой цветотип</li><li>Тип фигуры</li><li>Свои лучшие длины, силуэты фактуры, крой одежды</li><li>Как невербальной коммуникацией выразить свой запрос</li><li>С чего начать разбор гардероба самостоятельно</li><li>Какие тренды сейчас актуальны</li><li>Купить эту вещь или нет</li><li>Болевые точки - что хотели изменить, но не понимаете как</li><li>Какие аксессуары вам подходят</li><li>Какая сумка для вас базовая</li></ul>
-        </div>
-        <div>
-        <h4>Как проходит:</h4>
-        <ul><li>Онлайн</li><li>По времени консультация длится 1,5 - 2 часа</li><li>Стоимость 10 тыс. рублей</li><li>Предоплата 100 %</li></ul>
-        <h4>Что получите:</h4>
-        <ul><li>Ясность в вопросах своей внешности</li><li>Лучшие силуэты и фасоны для вашей фигуры</li><li>Что покупать, чего избегать</li><li>Какие аксессуары усилят ваш стиль</li><li>Легкость и уверенность от новых знаний</li><li>Ответы на свои вопросы</li><li>Полезный контакт эксперта в свою телефонную книжку</li></ul>
-        </div>
-        </div>
-        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
-      </div></div>
-    </details>
-    <details class="srv" id="srv-6">
-      <summary><span class="no">06</span><span class="nm">Лекции</span><span class="rs">Лекция на тему моды и стиля, 1-2 часа.</span><span class="pr">по договоренности</span><span class="tg" aria-hidden="true"></span></summary>
-      <div class="srv-body"><div class="srv-in">
-        <div class="cost-h">Стоимость:</div>
-        <div class="prices">
-        <div class="price"><span><em>По договоренности</em></span></div>
-        </div>
-        <div class="info">
-        <div>
-        <ul><li>Проведу лекцию на тему моды и стиля</li><li>Продолжительность 1-2 часа</li><li>Стоимость по договоренности</li></ul>
-        </div>
-        </div>
-        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
-      </div></div>
-    </details>
-    <details class="srv" id="srv-7">
-      <summary><span class="no">07</span><span class="nm">Сопровождение фотосъемки</span><span class="rs">Больше хороших кадров, уверенность и поддержка профессионала.</span><span class="pr">10 000 ₽ / 2 часа</span><span class="tg" aria-hidden="true"></span></summary>
-      <div class="srv-body"><div class="srv-in">
-        <div class="cost-h">Стоимость:</div>
-        <div class="prices">
-        <div class="price"><span><em>10 000 / 2 часа</em></span></div>
-        </div>
-        <div class="note-big">(только если образы подобраны мной)</div>
-        <div class="info">
-        <div>
-        <h4>Что входит:</h4>
-        <ul><li>Нахождение с вами на фотосъемке,</li><li>Отслеживание композиции кадра</li><li>Контроль за положением аксессуаров, прически, одежды</li><li>Помощь в компоновке образов</li><li>Отпаривание вещей по необходимости</li></ul>
-        </div>
-        <div>
-        <h4>Что получаете:</h4>
-        <ul><li>Больше хороших кадров</li><li>Уверенность</li><li>Поддержку профессионала</li></ul>
-        </div>
-        </div>
-        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
-      </div></div>
-    </details>
-    <details class="srv" id="srv-8">
-      <summary><span class="no">08</span><span class="nm">Подбор образов на мероприятие или фотосъемку</span><span class="rs">Продуманный, прогнозируемый результат и разнообразие кадров.</span><span class="pr">от 30 000 ₽</span><span class="tg" aria-hidden="true"></span></summary>
-      <div class="srv-body"><div class="srv-in">
-        <div class="cost-h">Стоимость:</div>
-        <div class="prices">
-        <div class="price"><span><em>от 30 000</em></span></div>
-        </div>
-        <div class="info">
-        <div>
-        <h4>Что входит:</h4>
-        <ul><li>Анкетирование</li><li>Выявление целей и задач</li><li>Анализ локации съемки</li><li>Подбор образа (закупка новых вещей или составление комплектов из вашего гардероба)</li><li>Составление Мудборда с рекомендуемыми позами и комплектами (для фотосессии)</li></ul>
-        </div>
-        <div>
-        <h4>Что получаете:</h4>
-        <ul><li>Экономия времени</li><li>Экономия нервов</li><li>Продуманный, прогнозируемый результат</li><li>Разнообразие кадров</li></ul>
-        </div>
-        <p class="remark">Стоимость от 30 тыс. руб. ( 2-5 образов ) - в зависимости от количества комплектов и уникальности запрашиваемой стилистики.</p>
-        </div>
-        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
-      </div></div>
-    </details>
-    <div class="svc-cta rv">
-      <p class="serif">Не уверены, с чего начать? Напишите — подберём формат <em>под ваш запрос.</em></p>
-      <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- 4. PHILOSOPHY -->
-<section class="philo" id="approach">
-  <div class="wrap philo-grid">
-    <div><span class="label">Философия работы</span>
-    <p class="serif rv">В работе ценю честность, прозрачность, <em>партнерство, доверие.</em></p></div>
-    <ol class="principles">
-      <li>Я не публикую фото клиентов ДО, потому что партнёрство предполагает уважение</li>
-      <li>Я уважаю ваш прошлый опыт и выбор одежды</li>
-      <li>Я не нуждаюсь в рекламе своих услуг за счет вашего незнания темы стиля</li>
-      <li>Оценить мой профессионализм вы можете работая со мной лично</li>
-    </ol>
-  </div>
-</section>
-
-<!-- 5. ABOUT / EXPERTISE -->
-<section class="sec" id="about">
-  <div class="wrap about-grid">
-    <div class="about-photo rv"><span class="cap">Надежда Родионова</span><img src="img/about-portrait.webp" width="644" height="1120" alt="Надежда Родионова" loading="lazy"></div>
-    <div class="about-text rv">
-      <span class="label n">Обо мне</span>
-      <h2 class="serif h2">В стилистике <em>с 2019 года</em></h2>
-      <p>Я прошла долгий путь от новичка к эксперту. Не гонюсь за быстрыми трендами, рекомендую качественные, актуальные вещи, не на один сезон, немного добавляю тренды, слушаю и слышу клиента, не запрещаю, а мягко направляю, заставляю задумываться, прежде чем купить.</p>
-      <p>В прошлом заядлый шопоголик, у меня большая насмотренность, умею находить вещи визуально выглядящие дороже, чем стоят. Знаю про сегмент люкс все, даже как купить самую желанную сумку в мире без байеров.</p>
-      <div class="facts">
-        <div><b>1811, EMKA</b>12 Stories, Present Simple, Sanchy и др.</div>
-        <div><b>Русские бренды</b>Lamoda — редко, Wildberries — как исключение</div>
-        <div><b>Люкс</b>знаю сегмент изнутри</div>
-      </div>
-      <p class="quote-line">«Я не фея. Хороший результат также зависит от вас. Но я могу сделать вас лучшей версией себя!»</p>
-    </div>
-  </div>
-</section>
-
-<!-- 6. QUALIFICATION (text only, photos on reviews.html) -->
-<section class="sec qual" id="education">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="label n">Образование</span>
-      <div>
-        <h2 class="serif h2">Квалификация <em>и обучение</em></h2>
-        <p>Дипломы, сертификаты и отзывы клиентов собраны на отдельной странице.</p>
-      </div>
-    </div>
-    <ul class="q-list">
-      <li class="rv"><span class="q-y">2019</span><span class="q-t">Имиджмейкинг<small>Диплом о профессиональной переподготовке · Институт Репутационных Технологий «Арт энд Имидж»</small></span></li>
-      <li class="rv"><span class="q-y">2025</span><span class="q-t">Персональный стайлинг<small>Большой онлайн-курс по персональному стайлингу</small></span></li>
-      <li class="rv"><span class="q-y">ACSTH</span><span class="q-t">New Mentality Coaching<small>International University Global Coaching</small></span></li>
-      <li class="rv"><span class="q-y">Курс</span><span class="q-t">Театры Москвы и Питера — метаморфозы реального времени<small>Экспертный курс · Школа Коллекционеров и Экспертов</small></span></li>
-    </ul>
-    <div class="q-cta rv">
-      <a class="btn line" href="reviews.html">Смотреть дипломы и отзывы <span class="ar">→</span></a>
-      <span class="q-note">4 документа · 5 отзывов</span>
-    </div>
-  </div>
-</section>
-
-<!-- 8. BLOG -->
-<section style="padding:120px 0 0">
-  <div class="wrap">
-    <a class="blog rv" href="https://t.me/yourwindofchange" target="_blank" rel="noopener">
-      <span class="label n">Блог</span>
-      <div><p class="serif">Подробнее познакомиться можно в моём <em>телеграм-канале</em></p><p>Подписывайся, чтобы узнать все о стиле</p></div>
-      <span class="link">Читать канал</span>
-    </a>
-  </div>
-</section>
-
-<!-- 9. FAQ -->
-<section class="sec" id="faq">
-  <div class="wrap faq-grid">
-    <div class="rv"><span class="label n">Вопросы</span><h2 class="serif h2" style="margin-top:22px">Популярные <em>вопросы</em></h2></div>
-    <div>
-      <details class="qa"><summary>Проводите ли вы мужской шоппинг?<i></i></summary>
-        <div class="a"><p>На данный момент нет, сейчас мой фокус полностью на женской аудитории</p></div></details>
-      <details class="qa"><summary>На какой бюджет рассчитывать?<i></i></summary>
-        <div class="a"><p>Чтобы собрать мини - капсулу, где будет одна верхняя одежда, сумка, обувь, несколько аксессуаров, жакет, пару низов и несколько рубашек, топов - примерно 300 - 350 тыс. руб.</p><p>Стоимость образа на мероприятие зависит от вашего бюджета и сложности запроса, что - то можно арендовать, а что-то купить - все обсуждаем заранее.</p></div></details>
-      <details class="qa"><summary>Могу ли я изменить забронированную дату?<i></i></summary>
-        <div class="a"><p>Да, можете, но за 24 часа до назначенного времени.</p></div></details>
-      <details class="qa"><summary>Если за время шоппинга мы ничего не купим?<i></i></summary>
-        <div class="a"><p>Такая ситуация сведена к минимуму, потому что я заранее изучаю шоппинг маршрут, вашу фигуру и наличие размеров и моделей в магазине.</p><p>Но если так случится, то без одежды вы не останетесь, будем смотреть по ситуации и искать варианты решения.</p></div></details>
-    </div>
-  </div>
-</section>
-
-<!-- 10. BOOKING -->
 <section class="contact" id="contact" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <span class="label rv">Запись</span>
@@ -745,7 +501,7 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   <div class="wrap">
     <div class="ft-grid">
       <div><a class="logo" href="#top"><b>Надежда Родионова</b><span>персональный стилист</span></a><p>Диплом стилиста имиджмейкера. В стилистике с 2019 года. Онлайн и оффлайн, Москва.</p></div>
-      <div><h4>Разделы</h4><ul><li><a href="#services">Услуги и цены</a></li><li><a href="#approach">Подход</a></li><li><a href="#about">Обо мне</a></li><li><a href="#education">Образование</a></li><li><a href="reviews.html">Отзывы</a></li><li><a href="#faq">Вопросы</a></li></ul></div>
+      <div><h4>Разделы</h4><ul><li><a href="services.html">Услуги и цены</a></li><li><a href="approach.html">Подход</a></li><li><a href="about.html">Обо мне</a></li><li><a href="about.html#education">Образование</a></li><li><a href="reviews.html">Отзывы</a></li><li><a href="faq.html">Вопросы</a></li></ul></div>
       <div><h4>Контакты</h4><ul><li><a href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Telegram — запись</a></li><li><a href="mailto:nadezda.rodionova@gmail.com">nadezda.rodionova@gmail.com</a></li><li><a href="https://t.me/yourwindofchange" target="_blank" rel="noopener">Канал о стиле</a></li></ul></div>
     </div>
     <div class="ft-bot"><span>© 2025 Надежда Родионова. Персональный стилист</span><a href="#top">Наверх ↑</a></div>

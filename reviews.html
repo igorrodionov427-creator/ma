@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%231D1D1B%22/%3E%3Ctext x=%2232%22 y=%2245%22 font-family=%22Georgia,serif%22 font-size=%2238%22 fill=%22%23F6F2EC%22 text-anchor=%22middle%22%3E%D0%9D%3C/text%3E%3C/svg%3E">
 <title>Дипломы и отзывы | Надежда Родионова</title>
-<meta name="description" content="Образование, дипломы и отзывы клиентов персонального стилиста Надежды Родионовой.">
+<meta name="description" content="Надежда Родионова — персональный стилист в Москве с 2019 года. Разбор гардероба, шоппинг-сопровождение, стилизация, удалённый шоппинг, консультации онлайн.">
 <meta property="og:title" content="Надежда Родионова — персональный стилист">
 <meta property="og:description" content="Моя цель — сделать вас лучшей версией себя.">
 <meta property="og:image" content="img/hero-portrait.webp">
@@ -269,6 +269,19 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   .t-h{margin-bottom:30px}
 }
 
+
+/* ---------- QUALIFICATION (main page, text only) ---------- */
+.qual{padding-top:40px}
+.q-list{list-style:none;border-top:1px solid var(--line);margin-left:260px}
+.q-list li{display:grid;grid-template-columns:120px 1fr;gap:30px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.q-y{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.q-t{font-family:var(--serif);font-size:clamp(22px,2vw,28px);color:var(--ink);line-height:1.2}
+.q-t small{display:block;font-family:var(--sans);font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.5}
+.q-cta{display:flex;align-items:center;gap:28px;margin:48px 0 0 260px;flex-wrap:wrap}
+.q-note{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:900px){.q-list,.q-cta{margin-left:0}}
+@media (max-width:600px){.q-list li{grid-template-columns:1fr;gap:8px;padding:22px 0}.q-cta .btn{width:100%}.q-cta{justify-content:center}}
+
 /* mobile sticky booking */
 .mbook{position:fixed;left:16px;right:16px;bottom:16px;z-index:40;display:none;transform:translateY(140%);transition:transform .6s var(--ease)}
 .mbook.on{transform:none}
@@ -364,43 +377,78 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   .ct-links{gap:22px;flex-direction:column}
   .ft-grid{grid-template-columns:1fr}
 }
-.page-top{padding:170px 0 30px}
-.page-top h1{font-size:clamp(48px,6vw,88px);margin-top:22px}
-.page-top .back{margin-top:34px}
-.trust{background:var(--bg)}
+
+/* ONE SIZE for all section headings (Cormorant kept), everything a bit smaller */
+:root{--h:clamp(30px,3.2vw,46px)}
+body{font-size:15px;line-height:1.7}
+.serif{line-height:1.08}
+.hero h1{font-size:clamp(42px,4.8vw,70px)}
+.hero .val{font-size:15.5px}
+.hero-meta b{font-size:24px}
+.h2,.t-h,.contact .serif,.philo .serif,.statement .serif,.page-top h1{font-size:var(--h)!important}
+.statement .serif{line-height:1.22}
+.srv .nm{font-size:clamp(21px,1.8vw,26px)}
+.svc-cta .serif,.blog .serif{font-size:clamp(22px,2vw,28px)}
+.q-t{font-size:clamp(19px,1.6vw,22px)}
+.qa summary{font-size:20px}
+.quote-line{font-size:20px}
+.facts b{font-size:21px}
+.mnav a:not(.btn){font-size:32px}
+@media (max-width:600px){:root{--h:30px}.hero h1{font-size:clamp(38px,10.5vw,46px)}.srv .nm{font-size:21px}.qa summary{font-size:18px}}
+
+/* «Подход» in the site colours (light, not dark) */
+.philo{background:var(--bg-2)!important;color:var(--ink-2)!important}
+.philo .label{color:var(--accent)!important}
+.philo .serif{color:var(--ink)!important}
+.philo .serif em{color:var(--accent)!important}
+.principles li{border-top-color:var(--line)!important;color:var(--ink-2)!important}
+.principles li:last-child{border-bottom:1px solid var(--line)}
+.principles li::before{color:var(--accent)!important}
+.philo .crumb{color:var(--muted)!important}
+.crumb-row{margin-bottom:6px}
+/* «Обо мне»: text on the left, photo on the right */
+@media (min-width:901px){
+  .about-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;gap:90px!important;align-items:center}
+  .about-text{order:1}.about-photo{order:2}
+}
+.about-photo{max-width:480px;justify-self:end}
+#about.page-first{padding-top:150px!important}
+
+/* multipage */
 .menu a.on{color:var(--ink)}.menu a.on::after{right:0}
-@media (max-width:900px){.page-top{padding:120px 0 10px}}
+.page-first{padding-top:190px!important}
+.philo.page-first{padding-top:200px!important}
+.crumb{display:inline-flex;gap:10px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+.crumb a{transition:color .3s}.crumb a:hover{color:var(--ink)}
+.philo .crumb{color:rgba(233,228,220,.5)}
+.trust{background:var(--bg)}
+.statement{padding:84px 0 96px!important}
+.contact{padding:120px 0!important}
+.next-pages{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:44px}
+@media (max-width:900px){.page-first{padding-top:120px!important}.statement{padding:64px 0 72px!important}.contact{padding:90px 0!important}}
 @media (max-width:600px){.trust .edu{grid-template-columns:repeat(2,1fr)!important;gap:22px 14px!important}.trust .edu .fr{aspect-ratio:3/4;padding:8px}.edu .ec{display:block!important;font-size:10px}}
 </style>
 </head>
 <body>
+
 <header class="hdr" id="hdr">
   <div class="wrap">
     <a class="logo" href="index.html" aria-label="На главную"><b>Надежда Родионова</b><span>персональный стилист</span></a>
     <nav class="menu" aria-label="Меню">
-      <a href="index.html#services">Услуги</a><a href="index.html#approach">Подход</a><a href="index.html#about">Обо мне</a><a href="reviews.html" class="on" aria-current="page">Отзывы</a><a href="index.html#faq">Вопросы</a><a href="index.html#contact">Контакты</a>
+      <a href="services.html">Услуги</a><a href="approach.html">Подход</a><a href="about.html">Обо мне</a><a href="reviews.html" class="on" aria-current="page">Отзывы</a><a href="faq.html">Вопросы</a>
     </nav>
     <a class="btn line" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться</a>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
   </div>
 </header>
 <nav class="mnav" id="mnav" aria-label="Мобильное меню">
-  <a href="index.html#services">Услуги</a><a href="index.html#approach">Подход</a><a href="index.html#about">Обо мне</a><a href="reviews.html">Отзывы</a><a href="index.html#faq">Вопросы</a><a href="index.html#contact">Контакты</a>
+  <a href="services.html">Услуги</a><a href="approach.html">Подход</a><a href="about.html">Обо мне</a><a href="reviews.html">Отзывы</a><a href="faq.html">Вопросы</a>
   <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться на консультацию</a>
 </nav>
 
-
 <main>
-<section class="page-top" id="top">
-  <div class="wrap">
-    <span class="label n">Надежда Родионова · Персональный стилист</span>
-    <h1 class="serif">Дипломы <em>и отзывы</em></h1>
-    <a class="link back" href="index.html">← На главную</a>
-  </div>
-</section>
-
-<!-- 6–7. EDUCATION + REVIEWS (one block) -->
-<section class="sec trust" id="reviews" style="padding-top:60px">
+<section class="sec trust page-first" id="reviews" style="padding-top:60px">
+  <div class="wrap crumb-row"><div class="crumb"><a href="index.html">Главная</a><span>/</span><span>Отзывы</span></div></div>
   <div class="wrap trust-grid">
     <div class="trust-col" id="education">
       <span class="label n rv">Образование</span>
@@ -430,13 +478,18 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   </div>
 </section>
 
-
-<section class="contact" style="border-top:1px solid var(--line)">
+<section class="contact" id="contact" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <span class="label rv">Запись</span>
     <h2 class="serif rv">Забронировать <em>дату</em></h2>
     <p class="sub rv">Напишите в Telegram — обсудим ваш запрос и подберём удобное время.</p>
-    <div class="ct-row rv"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться в Telegram <span class="ar">→</span></a></div>
+    <div class="ct-row rv">
+      <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться в Telegram <span class="ar">→</span></a>
+    </div>
+    <div class="ct-links rv">
+      <a class="link" href="mailto:nadezda.rodionova@gmail.com">nadezda.rodionova@gmail.com</a>
+      <a class="link" href="https://t.me/yourwindofchange" target="_blank" rel="noopener">Телеграм-канал о стиле</a>
+    </div>
   </div>
 </section>
 </main>
@@ -445,7 +498,7 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   <div class="wrap">
     <div class="ft-grid">
       <div><a class="logo" href="index.html"><b>Надежда Родионова</b><span>персональный стилист</span></a><p>Диплом стилиста имиджмейкера. В стилистике с 2019 года. Онлайн и оффлайн, Москва.</p></div>
-      <div><h4>Разделы</h4><ul><li><a href="index.html#services">Услуги и цены</a></li><li><a href="index.html#approach">Подход</a></li><li><a href="index.html#about">Обо мне</a></li><li><a href="#education">Образование</a></li><li><a href="#reviews">Отзывы</a></li><li><a href="index.html#faq">Вопросы</a></li></ul></div>
+      <div><h4>Разделы</h4><ul><li><a href="services.html">Услуги и цены</a></li><li><a href="approach.html">Подход</a></li><li><a href="about.html">Обо мне</a></li><li><a href="about.html#education">Образование</a></li><li><a href="reviews.html">Отзывы</a></li><li><a href="faq.html">Вопросы</a></li></ul></div>
       <div><h4>Контакты</h4><ul><li><a href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Telegram — запись</a></li><li><a href="mailto:nadezda.rodionova@gmail.com">nadezda.rodionova@gmail.com</a></li><li><a href="https://t.me/yourwindofchange" target="_blank" rel="noopener">Канал о стиле</a></li></ul></div>
     </div>
     <div class="ft-bot"><span>© 2025 Надежда Родионова. Персональный стилист</span><a href="index.html">Наверх ↑</a></div>
