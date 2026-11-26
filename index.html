@@ -4,723 +4,827 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Персональный стилист | Надежда Родионова</title>
-<meta name="description" content="Надежда Родионова — персональный стилист в Москве. Разбор гардероба, шоппинг-сопровождение, стилизация комплектов, удалённый шоппинг, консультации онлайн.">
-<meta property="og:title" content="Персональный стилист | Надежда Родионова">
-<meta property="og:description" content="Моя цель — сделать вас лучшей версией себя. Разбор гардероба, шоппинг, стилизация, консультации.">
+<meta name="description" content="Надежда Родионова — персональный стилист в Москве с 2019 года. Разбор гардероба, шоппинг-сопровождение, стилизация, удалённый шоппинг, консультации онлайн.">
+<meta property="og:title" content="Надежда Родионова — персональный стилист">
+<meta property="og:description" content="Моя цель — сделать вас лучшей версией себя.">
 <meta property="og:image" content="img/hero-portrait.webp">
-<meta name="theme-color" content="#F3EEE8">
+<meta name="theme-color" content="#F6F2EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --beige:#F3EEE8; --beige-2:#EAE2D8;
-  --green:#2F3F3B; --brown:#826043; --tan:#B39276; --caramel:#C99B6B; --caramel-d:#A9784D;
-  --olive:#8FA86B; --text:#333; --ink:#262523; --muted:rgba(0,0,0,.6);
-  --head:'Cormorant Garamond','Times New Roman',serif;
-  --body:'Manrope','Helvetica Neue',Arial,sans-serif;
-  --wrap:1200px;
+  --bg:#F6F2EC;        /* milk */
+  --bg-2:#EFE9E1;      /* cream */
+  --sand:#E6DCCF;      /* beige plate */
+  --ink:#1D1D1B;       /* graphite black */
+  --ink-2:#4A4844;
+  --muted:#8A857D;
+  --accent:#A88B6A;    /* natural beige accent */
+  --line:rgba(29,29,27,.14);
+  --serif:'Cormorant Garamond','Times New Roman',serif;
+  --sans:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --wrap:1240px;
+  --ease:cubic-bezier(.22,.8,.24,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px;scroll-behavior:smooth}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
-dialog.svc{overscroll-behavior:contain}
-body{font-family:var(--body);font-size:17px;line-height:1.55;color:var(--text);background:var(--beige);overflow-x:hidden}
+body{font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.7;color:var(--ink-2);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
-a{color:inherit}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-section{position:relative}
-.h{font-family:var(--head);font-weight:600;text-transform:uppercase;color:var(--green);letter-spacing:.02em;line-height:1.08}
-.h .acc,.h .acc2{font-style:italic;text-transform:none;letter-spacing:0;font-weight:500}
-.cost-h,.price,.note-big,.svc .actions span{font-weight:600!important}
-.h .acc{color:var(--tan)}
-.h .acc2{color:var(--brown)}
-.h2{font-size:clamp(40px,5.4vw,64px)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:20px 40px;border-radius:10px;
-  background:linear-gradient(180deg,var(--caramel) 0%,var(--caramel-d) 100%);color:#fff;text-decoration:none;
-  font-family:var(--body);font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;
-  box-shadow:0 12px 28px -10px rgba(169,120,77,.7);transition:transform .25s,box-shadow .25s,filter .25s;border:0;cursor:pointer}
-.btn:hover{transform:translateY(-2px);filter:brightness(.95);box-shadow:0 18px 34px -12px rgba(169,120,77,.85)}
-.btn:active{transform:translateY(0)}
-.blob{position:absolute;pointer-events:none;z-index:0;filter:blur(10px);opacity:.75}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 40px}
+.serif{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:-.01em;line-height:1.04}
+.serif em{font-style:italic}
+.label{display:block;font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.label.n{color:var(--accent)}
+.h2{font-size:clamp(40px,5vw,72px)}
+.sec{padding:140px 0}
+.rule{height:1px;background:var(--line);border:0}
+.sec-head{display:grid;grid-template-columns:220px 1fr;gap:40px;margin-bottom:72px;align-items:baseline}
+.sec-head p{margin-top:22px;max-width:560px;color:var(--ink-2)}
+
+/* buttons: thin, quiet */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;height:56px;padding:0 34px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);
+  font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease)}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.line{background:transparent;color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--bg)}
+.btn .ar{display:inline-block;transition:transform .4s var(--ease)}
+.btn:hover .ar{transform:translateX(4px)}
+.link{display:inline-flex;gap:10px;align-items:center;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
+  padding-bottom:6px;background:linear-gradient(var(--ink),var(--ink)) 0 100%/100% 1px no-repeat;transition:background-size .5s var(--ease)}
+.link:hover{background-size:0 1px;background-position:100% 100%}
+
+/* ---------- HEADER ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .5s,border-color .5s;border-bottom:1px solid transparent}
+.hdr.scrolled{background:rgba(246,242,236,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:30px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-family:var(--serif);font-weight:500;font-size:23px;color:var(--ink);letter-spacing:.01em}
+.logo span{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.menu{display:flex;gap:34px;font-size:13px;letter-spacing:.04em;color:var(--ink-2)}
+.menu a{position:relative;padding:4px 0;transition:color .3s}
+.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--ink);transition:right .45s var(--ease)}
+.menu a:hover{color:var(--ink)}.menu a:hover::after{right:0}
+.hdr .btn{height:44px;padding:0 22px;font-size:11px}
+.burger{display:none;width:44px;height:44px;border:0;background:none;cursor:pointer;position:relative}
+.burger i{position:absolute;left:10px;right:10px;height:1px;background:var(--ink);transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger i:nth-child(1){top:18px}.burger i:nth-child(2){top:26px}
+.nav-open .burger i:nth-child(1){top:22px;transform:rotate(45deg)}
+.nav-open .burger i:nth-child(2){top:22px;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:49;background:var(--bg);padding:110px 24px 40px;display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s linear .45s}
+.mnav a:not(.btn){font-family:var(--serif);font-size:38px;color:var(--ink);padding:8px 0;border-bottom:1px solid var(--line);
+  transform:translateY(10px);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease)}
+.mnav .btn{margin-top:auto}
+.nav-open .mnav{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
+.nav-open .mnav a{transform:none;opacity:1}
+.nav-open .mnav a:nth-child(2){transition-delay:.04s}.nav-open .mnav a:nth-child(3){transition-delay:.08s}
+.nav-open .mnav a:nth-child(4){transition-delay:.12s}.nav-open .mnav a:nth-child(5){transition-delay:.16s}.nav-open .mnav a:nth-child(6){transition-delay:.2s}
 
 /* ---------- HERO ---------- */
-.hero{overflow:hidden;min-height:100vh;min-height:100svh;display:flex}
-.hero::before{content:"";position:absolute;inset:0;background:url(img/silk.webp) center/cover;opacity:.22;mix-blend-mode:multiply}
-.hero .wrap{position:relative;z-index:1;flex:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:end;width:100%}
-.hero-text{align-self:center;padding:40px 0}
-.hero-name{font-weight:600;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--brown)}
-.hero h1{font-size:clamp(46px,5vw,78px);margin:14px 0 26px;line-height:.98}
-.hero h1 .acc2{display:block;font-size:.92em}
-.goal{display:inline-block;background:var(--brown);color:#fff;font-weight:500;font-size:16px;padding:10px 20px;border-radius:40px;margin-bottom:28px}
-.theses{list-style:none;display:grid;gap:14px;margin-bottom:36px;max-width:560px}
-.theses li{position:relative;padding-left:22px;color:#000;font-size:17px;line-height:1.45}
-.theses li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--caramel)}
-.hero-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.socials{display:flex;gap:12px}
-.socials a{width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 18px -8px rgba(47,63,59,.35);transition:transform .2s}
-.socials a:hover{transform:translateY(-2px)}
-.socials img{width:26px;height:26px}
-.hero-visual{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;padding-top:40px}
-.hero-visual .ell{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:88%;max-width:520px;height:82%;
-  background:url(img/hero-ellipse.webp) center top/100% 100% no-repeat;filter:blur(6px);opacity:.95}
-.hero-visual .d1{position:absolute;right:-60px;top:20px;width:340px;opacity:.9}
-.hero-visual .d2{position:absolute;left:-30px;bottom:40px;width:260px;opacity:.8}
-.pwrap{position:relative;z-index:2;margin-right:10%;display:flex;align-items:flex-end;max-width:100%}
-.hero-visual .portrait{position:relative;z-index:2;width:auto;height:min(86vh,86svh,760px);max-width:100%;object-fit:contain;object-position:bottom}
-/* warm golden halo behind the portrait */
-.glow{position:absolute;z-index:1;left:50%;top:6%;width:125%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;pointer-events:none;
-  background:radial-gradient(circle at 50% 42%,rgba(214,170,110,.85) 0%,rgba(201,155,107,.55) 28%,rgba(201,155,107,.22) 50%,rgba(243,238,232,0) 70%);
-  filter:blur(18px);animation:glow 7s ease-in-out infinite alternate}
-.glow::after{content:"";position:absolute;inset:14% 10% 0;background:url(img/hero-ellipse.webp) center top/100% 100% no-repeat;opacity:.55;filter:blur(10px)}
-@keyframes glow{from{transform:translateX(-50%) scale(.96);opacity:.85}to{transform:translateX(-50%) scale(1.04);opacity:1}}
-.badge{position:absolute;z-index:3;right:0;bottom:44px;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);
-  border-radius:14px;padding:14px 20px;box-shadow:0 14px 34px -14px rgba(47,63,59,.4);max-width:260px}
-.badge b{display:block;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
-.badge span{display:block;font-size:14px;line-height:1.4;color:#000}
+.hero{min-height:100vh;min-height:100svh;padding-top:78px;display:flex}
+.hero .wrap{flex:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:60px;width:100%}
+.hero-text{align-self:center;padding:50px 0 70px}
+.hero .label{margin-bottom:34px}
+.hero h1{font-size:clamp(52px,6.2vw,96px);line-height:1;margin-bottom:34px;max-width:12ch}
+.hero .val{font-size:17px;line-height:1.75;max-width:430px;color:var(--ink-2);margin-bottom:46px}
+.hero-cta{display:flex;align-items:center;gap:34px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:56px;margin-top:64px;padding-top:26px;border-top:1px solid var(--line);max-width:560px}
+.hero-meta div{font-size:13px;line-height:1.5;color:var(--muted)}
+.hero-meta b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;color:var(--ink);margin-bottom:6px;line-height:1}
+.hero-photo{position:relative;align-self:end;display:flex;justify-content:center;height:100%;min-height:560px}
+.arch{position:absolute;left:8%;right:8%;bottom:0;top:12%;background:var(--sand);border-radius:999px 999px 0 0}
+.hero-photo img{position:relative;align-self:flex-end;height:min(84vh,84svh,760px);width:auto;max-width:100%;object-fit:contain;object-position:bottom}
+.hero-photo .cap{position:absolute;right:0;top:16%;writing-mode:vertical-rl;transform:rotate(180deg);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- STATEMENT (problem) ---------- */
+.statement{padding:150px 0 130px;border-top:1px solid var(--line)}
+.statement .serif{font-size:clamp(32px,3.6vw,54px);line-height:1.18;max-width:1020px}
+.statement .serif em{color:var(--accent)}
+.st-foot{display:grid;grid-template-columns:220px 1fr;gap:40px;margin-top:60px}
+.st-foot p{max-width:620px}
+
+/* ---------- SERVICES (editorial list) ---------- */
+.services{background:var(--bg-2)}
+.srv{border-top:1px solid var(--line)}
+.srv:last-of-type{border-bottom:1px solid var(--line)}
+.srv summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:60px minmax(0,1.3fr) minmax(0,1.2fr) 190px 40px;gap:24px;align-items:center;padding:34px 0;transition:padding .5s var(--ease)}
+.srv summary::-webkit-details-marker{display:none}
+.srv .no{font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.srv .nm{font-family:var(--serif);font-size:clamp(26px,2.4vw,36px);color:var(--ink);line-height:1.1;transition:transform .5s var(--ease)}
+.srv .rs{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.srv .pr{font-size:14px;font-weight:600;color:var(--ink);text-align:right;letter-spacing:.02em}
+.srv .tg{justify-self:end;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;position:relative;transition:transform .5s var(--ease),background .4s,border-color .4s}
+.srv .tg::before,.srv .tg::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1px;background:var(--ink);transform:translate(-50%,-50%);transition:background .4s}
+.srv .tg::after{transform:translate(-50%,-50%) rotate(90deg)}
+.srv summary:hover .nm{transform:translateX(8px)}
+.srv summary:hover .tg{border-color:var(--ink)}
+.srv[open] .tg{transform:rotate(45deg);background:var(--ink);border-color:var(--ink)}
+.srv[open] .tg::before,.srv[open] .tg::after{background:var(--bg)}
+.srv-body{overflow:hidden}
+.srv-in{padding:6px 0 56px 84px}
+.svc-cta{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:80px;flex-wrap:wrap}
+.svc-cta .serif{font-size:clamp(28px,2.8vw,40px);max-width:620px}
+
+/* service detail typography (shared with former dialogs) */
+.cost-h{display:none}
+.prices{display:flex;flex-wrap:wrap;gap:0;margin-bottom:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.price{display:flex;align-items:baseline;gap:8px;padding:18px 30px 18px 0;margin-right:30px;font-size:14px;line-height:1.5;color:var(--ink-2);max-width:340px}
+.price+.price{padding-left:30px;border-left:1px solid var(--line)}
+.price img{display:none}
+.price em{font-style:normal;font-weight:600;color:var(--ink)}
+.note-big{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:24px;margin:-16px 0 32px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:30px 70px}
+.info h4{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
+.info h4:not(:first-child){margin-top:30px}
+.info ul{list-style:none;display:grid;gap:8px}
+.info li{position:relative;padding-left:22px;font-size:15px;line-height:1.6}
+.info li::before{content:"";position:absolute;left:0;top:.8em;width:10px;height:1px;background:var(--accent)}
+.info p{font-size:15px;line-height:1.6}
+.info .remark{grid-column:1/-1;border-left:1px solid var(--accent);padding:4px 0 4px 22px;font-size:14.5px;color:var(--ink-2)}
+.actions{margin-top:40px}
+
+/* ---------- PHILOSOPHY (b/w editorial) ---------- */
+.philo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:92vh;background:var(--ink);color:#E9E4DC}
+.philo-photo{position:relative;overflow:hidden}
+.philo-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 30%;filter:grayscale(1) contrast(1.02);transform:scale(1.04);transition:transform 2.4s var(--ease)}
+.philo.in .philo-photo img{transform:scale(1)}
+.philo-text{padding:120px 80px;display:flex;flex-direction:column;justify-content:center}
+.philo .label{color:rgba(233,228,220,.5);margin-bottom:28px}
+.philo .serif{color:#F6F2EC;font-size:clamp(34px,3.4vw,52px);line-height:1.12}
+.philo .serif em{color:#CDB89C}
+.principles{list-style:none;margin-top:56px;display:grid;gap:0;counter-reset:p}
+.principles li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;padding:18px 0;border-top:1px solid rgba(233,228,220,.16);font-size:15px;line-height:1.6;color:rgba(233,228,220,.86)}
+.principles li::before{content:"0" counter(p);font-size:11px;letter-spacing:.16em;color:#CDB89C;padding-top:4px}
 
 /* ---------- ABOUT ---------- */
-.about{padding:110px 0 90px;overflow:hidden}
-.about .blob.b1{width:640px;right:-200px;top:-80px}
-.about .blob.b2{width:520px;left:-260px;bottom:-120px;opacity:.5}
-.about .wrap{position:relative;z-index:1}
-.about .h2{font-size:clamp(36px,4.6vw,60px);max-width:1050px}
-.cols2{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin:60px 0 80px}
-.bar{border-left:3px solid var(--olive);padding-left:22px;font-size:15.5px;line-height:1.65;color:var(--ink)}
-.bar p+p{margin-top:8px}
-.bar strong{color:var(--green)}
-.about .share{font-size:clamp(30px,3.6vw,48px);line-height:1.18}
+.about-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:110px;align-items:center}
+.about-photo{position:relative;background:var(--sand);aspect-ratio:4/5;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.about-photo img{width:auto;height:88%;max-width:92%;object-fit:contain;object-position:bottom}
+.about-photo .cap{position:absolute;left:22px;top:20px;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
+.about-text .serif{margin:22px 0 34px}
+.about-text p{font-size:15.5px;margin-top:16px;max-width:560px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:46px;border-top:1px solid var(--line)}
+.facts div{padding:22px 20px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}
+.facts div+div{padding-left:20px;border-left:1px solid var(--line)}
+.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:24px;color:var(--ink);margin-bottom:6px;line-height:1.1}
+.quote-line{margin-top:40px;font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.35;color:var(--ink);max-width:520px}
 
-/* ---------- APPROACH ---------- */
-.approach{padding:20px 0 110px;overflow:hidden}
-.pills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:56px}
-.pill{background:linear-gradient(180deg,#B39276 0%,#97765A 100%);color:#fff;border-radius:14px;padding:26px 24px;
-  font-weight:700;font-size:clamp(19px,1.9vw,26px);line-height:1.25;box-shadow:0 16px 30px -18px rgba(130,96,67,.8);display:flex;align-items:center}
-.app-grid{display:grid;grid-template-columns:1fr 380px 1fr;gap:40px;align-items:center}
-.app-grid p{font-size:16px;line-height:1.65;color:var(--ink)}
-.app-grid p+p{margin-top:14px}
-.app-grid .right{text-align:right}
-.app-grid .brands{font-weight:600;color:var(--brown)}
-.app-photo{position:relative;display:flex;justify-content:center}
-.app-photo .ell{position:absolute;inset:6% -12% 0;background:url(img/about-ellipse.webp) center/contain no-repeat;filter:blur(8px)}
-.app-photo img.p{position:relative;z-index:1;width:100%;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 78%,transparent 100%)}
-.app-photo::before{content:"";position:absolute;z-index:0;left:50%;top:4%;width:120%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
-  background:radial-gradient(circle at 50% 40%,rgba(214,170,110,.7) 0%,rgba(201,155,107,.35) 35%,rgba(243,238,232,0) 68%);filter:blur(16px)}
-.app-photo .arr{position:absolute;z-index:2;width:70px;opacity:.55;filter:invert(38%) sepia(25%) saturate(700%) hue-rotate(345deg)}
-.app-photo .arr.a1{left:-40px;bottom:16%}
-.app-photo .arr.a2{right:-40px;top:20%;transform:scaleX(-1)}
+/* ---------- EDUCATION (editorial index) ---------- */
+.edu{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;max-width:700px}
+.edu button{border:0;background:none;padding:0;text-align:left;cursor:zoom-in}
+.edu .fr{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden}
+.edu img{width:100%;height:100%;object-fit:contain;transition:transform .9s var(--ease),opacity .6s,filter .6s}
+.edu button:hover img{transform:scale(1.04)}
+.edu .ec{display:block;margin-top:12px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .4s}
+.edu button:hover .ec{color:var(--ink)}
+.edu img{opacity:.92;filter:grayscale(.35)}
+.edu button:hover img{opacity:1;filter:none}
 
-/* ---------- SERVICES ---------- */
-.services{background:var(--beige-2);padding:100px 0}
-.services .h2{text-align:center;max-width:900px;margin:0 auto 54px;font-size:clamp(32px,4.2vw,50px)}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.tile{appearance:none;border:0;cursor:pointer;min-height:150px;padding:22px;border-radius:12px;color:#fff;
-  background:linear-gradient(180deg,#B39276 0%,#987659 100%);font-family:var(--body);font-size:19px;line-height:1.3;font-weight:500;text-align:center;
-  box-shadow:0 16px 30px -18px rgba(130,96,67,.9);transition:transform .25s,box-shadow .25s,filter .25s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-.tile:hover{transform:translateY(-4px);filter:brightness(1.05);box-shadow:0 24px 36px -18px rgba(130,96,67,.95)}
-.tile small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;font-weight:600}
+/* ---------- REVIEWS (Tilda-like infinite slider, quiet) ---------- */
+.reviews{background:var(--bg-2);overflow:hidden}
+.slider{--sw:250px;--gap:max(28px,calc((100vw - var(--sw))/2 - var(--sw) - 70px));position:relative;margin:0 calc(50% - 50vw)}
+.track{display:flex;align-items:center;gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:0 calc(50% - var(--sw)/2) 34px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.track::-webkit-scrollbar{display:none}
+.track>button{flex:0 0 var(--sw);height:280px;scroll-snap-align:center;border:0;padding:0;background:transparent;overflow:hidden;cursor:pointer;
+  opacity:.3;filter:grayscale(1);transform:scale(.93);transition:transform .9s var(--ease),opacity .9s var(--ease),filter .9s var(--ease)}
+.track>button.active{opacity:1;filter:none;transform:scale(1);cursor:zoom-in}
+.track>button:not(.active):hover{opacity:.55}
+.track.jumping>button{transition:none}
+.track img{width:100%;height:100%;object-fit:contain}
+.nav{position:absolute;left:0;right:0;top:calc(50% - 37px);display:flex;justify-content:center;gap:calc(var(--sw) + 56px);pointer-events:none;z-index:2}
+.nav button{pointer-events:auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;
+  display:grid;place-items:center;transition:background .4s,color .4s,border-color .4s}
+.nav button:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.nav svg{width:15px;height:15px}
+.dots{display:flex;justify-content:center;align-items:center;gap:12px;font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.dots i{width:24px;height:1px;background:var(--line);cursor:pointer;transition:background .4s,width .4s var(--ease)}
+.dots i.on{background:var(--ink);width:44px}
 
-/* ---------- MODAL ---------- */
-dialog.svc{border:0;padding:0;width:min(1120px,calc(100% - 24px));max-height:calc(100dvh - 24px);margin:auto;border-radius:18px;background:var(--beige);color:var(--text);box-shadow:0 40px 90px -30px rgba(0,0,0,.5)}
-dialog.svc::backdrop{background:rgba(38,37,35,.55);backdrop-filter:blur(3px)}
-dialog.svc[open]{animation:pop .3s cubic-bezier(.2,.8,.2,1)}
-@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
-.svc-in{padding:56px 60px 60px;position:relative}
-.close{position:sticky;top:0;float:right;margin:-36px -36px 0 0;width:46px;height:46px;border-radius:50%;border:0;background:#fff;cursor:pointer;
-  font-size:26px;line-height:1;color:var(--green);box-shadow:0 6px 16px -6px rgba(0,0,0,.3);z-index:5}
-.close:hover{background:var(--green);color:#fff}
-.svc h3{font-size:clamp(36px,4.6vw,58px);margin-bottom:28px}
-.cost-h{font-family:var(--head);color:var(--caramel);font-size:clamp(30px,3.4vw,44px);text-transform:uppercase;font-weight:400;margin-bottom:16px}
-.prices{display:flex;flex-wrap:wrap;gap:16px 42px;margin-bottom:36px}
-.price{display:flex;gap:10px;align-items:flex-start;font-family:var(--head);font-size:clamp(23px,2.3vw,30px);line-height:1.15;color:var(--green);text-transform:uppercase;max-width:330px}
-.price img{width:22px;height:22px;margin-top:2px;flex:none}
-.price em{font-style:normal;color:var(--brown)}
-.note-big{font-family:var(--head);color:var(--brown);font-size:clamp(24px,2.6vw,34px);margin:-12px 0 32px}
-.info{display:grid;grid-template-columns:1fr 1fr;gap:28px 54px}
-.info h4{font-size:16px;font-weight:700;color:var(--brown);margin:0 0 8px}
-.info h4:not(:first-child){margin-top:20px}
-.info ul{list-style:none;display:grid;gap:5px}
-.info li{position:relative;padding-left:18px;font-size:15.5px;line-height:1.5}
-.info li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--green)}
-.info p{font-size:15.5px;line-height:1.55}
-.info .remark{grid-column:1/-1;background:#fff;border-radius:12px;padding:16px 20px;border-left:3px solid var(--olive);font-size:15px}
-.svc .actions{margin-top:38px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.svc .actions span{font-family:var(--head);font-size:24px;color:var(--brown)}
+/* ---------- BLOG ---------- */
+.blog{display:grid;grid-template-columns:220px 1fr auto;gap:40px;align-items:center;padding:70px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.blog .serif{font-size:clamp(28px,2.8vw,42px);max-width:680px}
+.blog p{margin-top:12px;color:var(--muted);font-size:14px}
 
 /* ---------- FAQ ---------- */
-.faq{padding:110px 0 90px}
-.faq .h2{margin-bottom:40px;font-size:clamp(36px,4vw,50px)}
-.qa{border-top:1px solid rgba(47,63,59,.2)}
-.qa:last-child{border-bottom:1px solid rgba(47,63,59,.2)}
-.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-weight:600;font-size:clamp(17px,1.7vw,21px);color:var(--green)}
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:100px;align-items:start}
+.qa{border-top:1px solid var(--line)}
+.qa:last-child{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 0;font-family:var(--serif);font-size:24px;line-height:1.25;color:var(--ink)}
 .qa summary::-webkit-details-marker{display:none}
-.qa summary i{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--caramel);position:relative;transition:transform .3s,background .3s}
-.qa summary i::before,.qa summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:var(--caramel-d);transform:translate(-50%,-50%)}
-.qa summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
-.qa[open] summary i{transform:rotate(45deg);background:var(--caramel)}
-.qa[open] summary i::before,.qa[open] summary i::after{background:#fff}
-.qa .a{padding:0 60px 28px 0;font-size:16px;line-height:1.65;color:var(--ink)}
-.qa .a p+p{margin-top:8px}
+.qa summary i{flex:none;width:14px;height:14px;position:relative;transition:transform .5s var(--ease)}
+.qa summary i::before,.qa summary i::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--ink)}
+.qa summary i::after{transform:rotate(90deg)}
+.qa[open] summary i{transform:rotate(45deg)}
+.qa .a{overflow:hidden;padding:0 60px 28px 0;font-size:15.5px}
+.qa .a p+p{margin-top:10px}
 
-/* ---------- TELEGRAM ---------- */
-.tg{padding:20px 0 100px}
-.tg a{display:flex;align-items:center;justify-content:space-between;gap:30px;text-decoration:none;border-radius:20px;padding:46px 56px;
-  background:linear-gradient(120deg,#2F3F3B 0%,#43554F 100%);color:#fff;box-shadow:0 30px 50px -30px rgba(47,63,59,.8);transition:transform .3s}
-.tg a:hover{transform:translateY(-3px)}
-.tg .h{color:#fff;font-size:clamp(28px,3.2vw,42px);max-width:760px}
-.tg .h .acc{color:var(--caramel)}
-.tg p{margin-top:10px;font-size:15px;opacity:.85}
-.tg .ico{flex:none;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}
-.tg .ico img{width:64px;height:64px}
+/* ---------- CONTACT ---------- */
+.contact{text-align:center;padding:160px 0}
+.contact .label{margin-bottom:30px}
+.contact .serif{font-size:clamp(46px,6vw,92px);margin:0 auto;max-width:900px}
+.contact p.sub{max-width:480px;margin:28px auto 48px}
+.ct-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.ct-links{display:flex;justify-content:center;gap:44px;margin-top:56px;flex-wrap:wrap}
 
-/* ---------- GALLERIES ---------- */
-.gal{padding:30px 0 100px}
-.gal .h2{margin-bottom:40px;font-size:clamp(36px,4vw,50px)}
-.gal-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:34px}
-.gal-head .h2{margin-bottom:0}
-.gal{overflow:hidden}
-/* full-width slider: active slide in the centre, neighbours pushed to the screen edges and faded (as on Tilda) */
-.slider{--sw:400px;--gap:max(28px,calc((100vw - var(--sw))/2 - var(--sw) - 40px));position:relative;margin:0 calc(50% - 50vw)}
-.slider.s-rev{--sw:440px}
-.track{display:flex;align-items:center;gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
-  padding:20px calc(50% - var(--sw)/2) 30px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
-.track::-webkit-scrollbar{display:none}
-.track>button{flex:0 0 var(--sw);scroll-snap-align:center;border:0;padding:0;background:#fff;border-radius:6px;overflow:hidden;cursor:pointer;
-  box-shadow:0 24px 44px -28px rgba(47,63,59,.55);opacity:.38;filter:saturate(.5) brightness(1.08);transform:scale(.94);
-  transition:transform .8s cubic-bezier(.22,.8,.24,1),opacity .8s ease,filter .8s ease,box-shadow .8s ease}
-.track>button.active{opacity:1;filter:none;transform:scale(1);cursor:zoom-in;box-shadow:0 34px 60px -28px rgba(47,63,59,.7)}
-.track>button:not(.active):hover{opacity:.6}
-.track.jumping>button{transition:none}
-.track img{width:100%;height:100%;object-fit:contain;background:#fff}
-.dipl>button{aspect-ratio:3/4}
-.rev>button{height:480px;background:var(--beige-2);padding:16px}
-.rev img{background:transparent;border-radius:6px}
-.nav{position:absolute;left:0;right:0;top:calc(50% - 22px);display:flex;justify-content:center;gap:calc(var(--sw) + 70px);pointer-events:none;z-index:2}
-.nav button{pointer-events:auto;width:44px;height:44px;border-radius:50%;border:0;background:#9E7F64;color:#fff;cursor:pointer;
-  display:grid;place-items:center;box-shadow:0 10px 22px -10px rgba(130,96,67,.8);transition:background .3s,transform .3s,opacity .4s}
-.nav button:hover:not(:disabled){background:var(--brown);transform:scale(1.08)}
-.nav svg{width:18px;height:18px}
-.dots{display:flex;justify-content:center;gap:10px;margin-top:6px}
-.dots i{width:8px;height:8px;border-radius:50%;background:rgba(47,63,59,.22);cursor:pointer;transition:background .35s,transform .35s}
-.dots i.on{background:var(--green);transform:scale(1.15)}
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--line);padding:70px 0 34px;font-size:14px}
+.ft-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding-bottom:56px}
+footer p{margin-top:18px;max-width:300px;color:var(--muted);font-size:13.5px;line-height:1.6}
+footer h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:18px}
+footer ul{list-style:none;display:grid;gap:10px}
+footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
+.ft-bot{padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
 
-.lb{position:fixed;inset:0;z-index:100;background:rgba(20,20,18,.88);display:flex;align-items:center;justify-content:center;padding:30px;cursor:zoom-out;
-  opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s;backdrop-filter:blur(4px)}
-.lb.on{opacity:1;visibility:visible;transition:opacity .45s ease}
-.lb img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:scale(.94);transition:transform .55s cubic-bezier(.22,.8,.24,1)}
+
+/* ---------- TRUST: education + reviews in one block ---------- */
+.trust{background:var(--bg-2);overflow:hidden}
+.trust-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:90px;align-items:start}
+.trust-col{min-width:0}
+.t-h{font-size:clamp(34px,3.2vw,48px);margin:18px 0 44px}
+.trust .edu{grid-template-columns:repeat(2,1fr);max-width:none;gap:28px 24px}
+.trust .edu .fr{aspect-ratio:4/3;background:var(--bg);padding:12px}
+.trust .slider{margin:0;--sw:250px;--gap:24px}
+.trust .track{padding:0 calc(50% - var(--sw)/2) 30px;cursor:grab;user-select:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+.trust .track.dragging{cursor:grabbing;scroll-snap-type:none!important;scroll-behavior:auto!important}
+.trust .track img{pointer-events:none;-webkit-user-drag:none}
+.trust .nav{gap:calc(var(--sw) + 36px)}
+.slider:focus-visible{outline:1px solid var(--accent);outline-offset:8px}
+.trust .track>button{height:372px}
+@media (max-width:900px){
+  .trust-grid{grid-template-columns:1fr;gap:80px}
+  .trust .slider{margin:0 -24px}
+  .trust .track{-webkit-mask-image:none;mask-image:none}
+}
+@media (max-width:600px){
+  .trust .slider{margin:0 -20px;--sw:62vw;--gap:14px}
+  .trust .edu{grid-template-columns:repeat(4,1fr);gap:10px}
+  .trust .edu .fr{aspect-ratio:3/4;padding:4px}
+  .trust .track>button{height:280px}
+  .t-h{margin-bottom:30px}
+}
+
+/* mobile sticky booking */
+.mbook{position:fixed;left:16px;right:16px;bottom:16px;z-index:40;display:none;transform:translateY(140%);transition:transform .6s var(--ease)}
+.mbook.on{transform:none}
+.mbook .btn{width:100%}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(246,242,236,.97);display:flex;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;
+  opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility 0s linear .5s}
+.lb.on{opacity:1;visibility:visible;transition:opacity .5s var(--ease)}
+.lb img{max-width:100%;max-height:100%;transform:scale(.96);transition:transform .7s var(--ease)}
 .lb.on img{transform:none}
-dialog.svc.closing{animation:popOut .28s ease forwards}
-dialog.svc.closing::backdrop{animation:fadeOut .28s ease forwards}
-dialog.svc[open]::backdrop{animation:fadeIn .35s ease}
-@keyframes popOut{to{opacity:0;transform:translateY(14px) scale(.98)}}
-@keyframes fadeOut{to{opacity:0}}
-@keyframes fadeIn{from{opacity:0}}
-.qa .a{overflow:hidden}
-.tile,.btn,.socials a,.pill,.tg a{will-change:transform}
-.hero-text>*{animation:rise .9s cubic-bezier(.22,.8,.24,1) both}
-.hero-text>*:nth-child(2){animation-delay:.08s}.hero-text>*:nth-child(3){animation-delay:.16s}
-.hero-text>*:nth-child(4){animation-delay:.24s}.hero-text>*:nth-child(5){animation-delay:.32s}
-.hero-visual .portrait,.badge{animation:rise 1.1s cubic-bezier(.22,.8,.24,1) .2s both}
-.badge{animation-delay:.5s}
-@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-
-footer{background:var(--green);color:rgba(255,255,255,.8);text-align:center;padding:34px 24px;font-size:14px}
-footer a{color:var(--caramel);text-decoration:none}
-footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(30px);transition:opacity 1s ease var(--d,0s),transform 1s cubic-bezier(.22,.8,.24,1) var(--d,0s)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1.1s var(--ease) var(--d,0s),transform 1.1s var(--ease) var(--d,0s)}
 .rv.in{opacity:1;transform:none}
+.hero-text>*{animation:rise 1.1s var(--ease) both}
+.hero-text>*:nth-child(2){animation-delay:.08s}.hero-text>*:nth-child(3){animation-delay:.16s}
+.hero-text>*:nth-child(4){animation-delay:.24s}.hero-text>*:nth-child(5){animation-delay:.32s}
+.arch{animation:archIn 1.4s var(--ease) both}
+.hero-photo img{animation:rise 1.3s var(--ease) .25s both}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes archIn{from{opacity:0;transform:scaleY(.9);transform-origin:bottom}to{opacity:1;transform:none}}
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width:1024px){
-  .tiles{grid-template-columns:repeat(2,1fr)}
-  .app-grid{grid-template-columns:1fr 300px 1fr;gap:26px}
-  .slider{--sw:340px}.slider.s-rev{--sw:380px}
+@media (max-width:1100px){
+  .menu{gap:22px}
+  .srv summary{grid-template-columns:44px minmax(0,1fr) 150px 40px}
+  .srv .rs{display:none}
+  .srv-in{padding-left:68px}
+  .edu{grid-template-columns:repeat(2,1fr)}
+  .philo-text{padding:90px 50px}
 }
-@media (max-width:860px){
-  .hero{min-height:0;display:block}
-  .hero .wrap{grid-template-columns:minmax(0,1fr)}
-  .hero h1{font-size:clamp(32px,9.6vw,72px)}
-  .hero-text{padding:8px 0 56px;order:2}
-  .hero-visual{order:1;min-height:0;margin:0 -24px;padding-top:28px;border-bottom:1px solid rgba(130,96,67,.18)}
-  .hero-visual .d1{width:220px;right:-40px;top:0}
-  .hero-visual .d2{width:180px;left:-30px}
-  .hero-name{margin-top:26px}
-  .pwrap{margin:0 auto;width:min(400px,80%)}
-  .hero-visual .portrait{width:100%;height:auto}
-  .badge{right:16px;bottom:20px}
-  .cols2{grid-template-columns:1fr;gap:30px;margin:40px 0 56px}
-  .pills{grid-template-columns:1fr}
-  .app-grid{grid-template-columns:1fr}
-  .app-grid .right{text-align:left}
-  .app-photo{order:-1;max-width:340px;margin:0 auto}
-  .info{grid-template-columns:1fr}
-  .svc-in{padding:48px 22px 34px}
-  .close{margin:-34px -10px 0 0}
-  .tg a{flex-direction:column-reverse;align-items:flex-start;padding:34px 26px}
-  .tg .ico{width:80px;height:80px}.tg .ico img{width:44px;height:44px}
+@media (max-width:900px){
+  .wrap{padding:0 24px}
+  .menu,.hdr .btn{display:none}
+  .burger{display:block}
+  .sec{padding:96px 0}
+  .sec-head{grid-template-columns:1fr;gap:16px;margin-bottom:48px}
+  .hero{min-height:0}
+  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:0}
+  .hero-photo{order:1;min-height:0;margin:10px auto 0;width:min(420px,100%)}
+  .hero-photo img{height:auto;width:86%}
+  .hero-photo .cap{display:none}
+  .hero-text{order:2;padding:44px 0 72px}
+  .hero .label{margin-bottom:22px}
+  .hero-meta{gap:30px;margin-top:56px}
+  .statement{padding:100px 0 90px}
+  .st-foot{grid-template-columns:1fr;gap:14px;margin-top:40px}
+  .philo{grid-template-columns:1fr;min-height:0}
+  .philo-photo{aspect-ratio:4/5}
+  .philo-text{padding:72px 24px 80px}
+  .about-grid{grid-template-columns:1fr;gap:54px}
+  .about-photo{max-width:460px}
+  .blog{grid-template-columns:1fr;gap:22px;padding:56px 0}
+  .faq-grid{grid-template-columns:1fr;gap:36px}
+  .info{grid-template-columns:1fr;gap:10px}
+  .contact{padding:110px 0}
+  .ft-grid{grid-template-columns:1fr 1fr}
+  .ft-grid>div:first-child{grid-column:1/-1}
+  .mbook{display:block}
+  footer{padding-bottom:100px}
 }
-@media (max-width:520px){
-  body{font-size:16px}
-  .wrap{padding:0 16px}
-  .hero-visual{margin:0 -16px}
-  .tiles{grid-template-columns:1fr 1fr;gap:12px}
-  .tile{min-height:110px;font-size:15.5px;padding:14px}
-  .btn{width:100%;padding:18px 20px}
-  .hero-cta{flex-direction:column;align-items:stretch}
-  .socials{justify-content:center}
-  .about,.services,.faq{padding:70px 0}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .hero h1{font-size:clamp(44px,12.4vw,60px)}
+  .hero .val{font-size:16px;margin-bottom:36px}
+  .hero-cta{flex-direction:column;align-items:stretch;gap:20px}
+  .hero-cta .link{align-self:center}
+  .hero-meta{gap:18px}
+  .hero-meta b{font-size:24px}
+  .hero-meta div{font-size:12px}
+  .srv summary{grid-template-columns:30px minmax(0,1fr) 34px;gap:12px;padding:26px 0}
+  .srv .pr{grid-column:2;grid-row:2;text-align:left;font-size:13px;font-weight:500;color:var(--accent);margin-top:-6px}
+  .srv .tg{grid-column:3;grid-row:1/3;width:34px;height:34px}
+  .srv .nm{font-size:25px}
+  .srv-in{padding:0 0 44px}
+  .price{padding:14px 0!important;margin:0!important;border-left:0!important;max-width:none;width:100%}
+  .price+.price{border-top:1px solid var(--line)}
+  .svc-cta{margin-top:56px}
+  .svc-cta .btn{width:100%}
+  .facts{grid-template-columns:1fr}
+  .facts div{padding:18px 0!important;border-left:0!important;border-bottom:1px solid var(--line)}
+  .edu{gap:18px}
+  .edu .fr{padding:12px}
+  .edu .ec b{font-size:17px}
+  .slider{--sw:60vw;--gap:14px}
+  .track>button{height:260px}
+  .edu{grid-template-columns:repeat(4,1fr);gap:10px}
+  .edu .ec{display:none}
+  .nav{display:none}
+  .qa summary{font-size:21px;padding:24px 0}
   .qa .a{padding-right:0}
-  .badge{display:none}
-  .pwrap{width:min(330px,82%)}
-  .pill{padding:18px 20px;font-size:17px;border-radius:12px}
-  .pills{gap:12px;margin-bottom:36px}
-  .app-photo{max-width:250px}
-  .app-photo .arr{width:46px}
-  .app-photo .arr.a1{left:-36px}.app-photo .arr.a2{right:-36px}
-  .app-grid p{font-size:15.5px}
-  .goal{font-size:14.5px;padding:9px 16px;border-radius:14px}
-  .theses li{font-size:15.5px}
-  .h2{font-size:clamp(32px,9vw,44px)}
-  .price{max-width:none}
-  .slider{--sw:72vw;--gap:14px}
-  .slider.s-rev{--sw:80vw}
-  .rev>button{height:420px}
-  .nav{gap:calc(var(--sw) - 16px)}
-  .nav button{width:40px;height:40px}
+  .contact .serif{font-size:clamp(42px,12vw,60px)}
+  .ct-row .btn{width:100%}
+  .ct-links{gap:22px;flex-direction:column}
+  .ft-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="На главную"><b>Надежда Родионова</b><span>персональный стилист</span></a>
+    <nav class="menu" aria-label="Меню">
+      <a href="#services">Услуги</a><a href="#approach">Подход</a><a href="#about">Обо мне</a><a href="#reviews">Отзывы</a><a href="#faq">Вопросы</a><a href="#contact">Контакты</a>
+    </nav>
+    <a class="btn line" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Мобильное меню">
+  <a href="#services">Услуги</a><a href="#approach">Подход</a><a href="#about">Обо мне</a><a href="#reviews">Отзывы</a><a href="#faq">Вопросы</a><a href="#contact">Контакты</a>
+  <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться на консультацию</a>
+</nav>
+
+<main>
+<!-- 1. WHO + VALUE -->
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-text">
-      <div class="hero-name">Надежда Родионова</div>
-      <h1 class="h">Персональный <span class="acc2">стилист</span></h1>
-      <div class="goal">Моя цель - сделать вас лучшей версией себя</div>
-      <ul class="theses">
-        <li>Я не публикую фото клиентов ДО, потому что партнёрство предполагает уважение</li>
-        <li>Я уважаю ваш прошлый опыт и выбор одежды</li>
-        <li>Я не нуждаюсь в рекламе своих услуг за счет вашего незнания темы стиля</li>
-        <li>Оценить мой профессионализм вы можете работая со мной лично</li>
-      </ul>
+      <span class="label">Надежда Родионова · Персональный стилист</span>
+      <h1 class="serif">Сделаю вас лучшей <em>версией себя</em></h1>
+      <p class="val">Найду лучшие силуэты, помогу скрыть нюансы фигуры и акцентировать достоинства. Онлайн и оффлайн, Москва.</p>
       <div class="hero-cta">
-        <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a>
-        <div class="socials">
-          <a href="mailto:nadezda.rodionova@gmail.com" aria-label="Написать на e-mail"><img src="img/icon-email.png" alt="" width="26" height="26"></a>
-          <a href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener" aria-label="Написать в Telegram"><img src="img/icon-telegram.png" alt="" width="26" height="26"></a>
-        </div>
+        <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться на консультацию <span class="ar">→</span></a>
+        <a class="link" href="#services">Посмотреть услуги</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>с 2019</b>в стилистике</div>
+        <div><b>Диплом</b>стилиста-имиджмейкера</div>
+        <div><b>8</b>форматов работы</div>
       </div>
     </div>
-    <div class="hero-visual">
-      <img class="d1" src="img/decor-1.webp" alt="" aria-hidden="true">
-      <img class="d2" src="img/decor-2.webp" alt="" aria-hidden="true">
-      <div class="pwrap">
-        <div class="glow" aria-hidden="true"></div>
-        <img class="portrait" src="img/hero-portrait.webp" width="650" height="788" alt="Надежда Родионова, персональный стилист">
-      </div>
-      <div class="badge"><b>Надежда Родионова</b><span>Персональный стилист<br>Диплом стилиста имиджмейкера</span></div>
+    <div class="hero-photo">
+      <div class="arch" aria-hidden="true"></div>
+      <img src="img/hero-portrait.webp" width="650" height="788" alt="Надежда Родионова, персональный стилист" fetchpriority="high">
+      <span class="cap">Москва · онлайн / оффлайн</span>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about">
-  <img class="blob b1" src="img/about-ellipse.webp" alt="" aria-hidden="true">
-  <img class="blob b2" src="img/about-ellipse.webp" alt="" aria-hidden="true">
+<!-- 2. PROBLEM -->
+<section class="statement">
   <div class="wrap">
-    <h2 class="h h2 rv">В стилистике с 2019 года<br>В работе ценю <span class="acc">честность, прозрачность, партнерство, доверие</span></h2>
-    <div class="cols2">
-      <div class="bar rv">
-        <p>Я прошла долгий путь от новичка к эксперту, набила много шишек. Знаю, что такое большой гардероб, нечего надеть и импульсивный шопинг.</p>
-        <p>Я тот специалист, который знает как больно признавать свои ошибки, сложно что-то менять, трудно решиться доверить разбор гардероба и показать себя чужому человеку.</p>
-        <p>Со мной комфортно, спокойно и приятно работать.</p>
-      </div>
-      <div class="bar rv">
-        <p><strong>НО! Важно помнить:</strong></p>
-        <p><strong>Я не фея</strong></p>
-        <p>Хороший результат также зависит от вас.</p>
-        <p>Я приложу максимум своих знаний и опыта, работая с вами.</p>
-        <p>Но я не увеличу ваш рост на 20 см, из плюс сайза не сделаю дюймовочку, вы не станете молодой девчонкой, если вы взрослая женщина.</p>
-        <p><strong>Но я могу сделать вас лучшей версией себя!</strong></p>
-      </div>
-    </div>
-    <h2 class="h share rv">Я поделюсь с вами своими знаниями, своим видением, найду лучшие силуэты, помогу скрыть нюансы фигуры и <span class="acc">акцентировать достоинства</span></h2>
-  </div>
-</section>
-
-<!-- APPROACH -->
-<section class="approach">
-  <div class="wrap">
-    <div class="pills">
-      <div class="pill rv">Я прикладываю максимум своих знаний и опыта</div>
-      <div class="pill rv">Вы доверяете мне, я доверяю вам</div>
-      <div class="pill rv">Вы платите за мое время и экспертность</div>
-    </div>
-    <div class="app-grid">
-      <div class="rv">
-        <p><strong>Прежде чем обратиться ко мне, подумайте, ваш ли я стилист.</strong></p>
-        <p>Я не гонюсь за быстрыми трендами, рекомендую качественные, актуальные вещи, не на один сезон, немного добавляю тренды, слушаю и слышу клиента, не запрещаю, а мягко направляю, заставляю задумываться, прежде чем купить.</p>
-        <p class="brands">Работаю в сегменте 1811, EMKA, 12 Stories, Present Simple, Sanchy и др.</p>
-        <p>Люблю русские бренды, могу редко что-то рекомендовать с Lamoda, и как исключение Wildberries.</p>
-      </div>
-      <div class="app-photo">
-        <div class="ell" aria-hidden="true"></div>
-        <img class="arr a1" src="img/arrows.svg" alt="" aria-hidden="true">
-        <img class="arr a2" src="img/arrows.svg" alt="" aria-hidden="true">
-        <img class="p" src="img/about-portrait.webp" width="644" height="1120" alt="Надежда Родионова" loading="lazy">
-      </div>
-      <div class="right rv">
-        <p><strong>Знаю про сегмент люкс все, даже как купить самую желанную сумку в мире без байеров.</strong></p>
-        <p>В прошлом заядлый шопоголик, у меня большая насмотренность, умею находить вещи визуально выглядящие дороже, чем стоят.</p>
-        <p>Любовь к вещам, моде, людям, эстетике и интеллекту делает меня особенным специалистом.</p>
-        <p>Я люблю делиться своими знаниями, люблю, когда женщины красивые и уверенные, знают свое тело и умеют его одевать.</p>
-      </div>
+    <p class="serif rv">Знаю, что такое <em>большой гардероб,</em> нечего надеть и <em>импульсивный шопинг</em>.</p>
+    <div class="st-foot rv">
+      <span class="label n">Со мной спокойно</span>
+      <p>Я тот специалист, который знает как больно признавать свои ошибки, сложно что-то менять, трудно решиться доверить разбор гардероба и показать себя чужому человеку. Со мной комфортно, спокойно и приятно работать.</p>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
+<!-- 3. SERVICES + PRICES -->
+<section class="sec services" id="services">
   <div class="wrap">
-    <h2 class="h h2 rv">Услуги предоставляются в формате <span class="acc2">онлайн/оффлайн:</span></h2>
-    <div class="tiles">
-      <button class="tile" data-open="s1">Разбор<br>гардероба<small>подробнее</small></button>
-      <button class="tile" data-open="s2">Шоппинг<br>сопровождение<small>подробнее</small></button>
-      <button class="tile" data-open="s3">Стилизация<br>комплектов<small>подробнее</small></button>
-      <button class="tile" data-open="s4">Удаленный<br>шоппинг<small>подробнее</small></button>
-      <button class="tile" data-open="s5">Консультации<br>(Только онлайн)<small>подробнее</small></button>
-      <button class="tile" data-open="s6">Лекции<small>подробнее</small></button>
-      <button class="tile" data-open="s7">Сопровождение<br>фотосъемки<small>подробнее</small></button>
-      <button class="tile" data-open="s8">Подбор образа<br>на мероприятие<small>подробнее</small></button>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICE DIALOGS -->
-<dialog class="svc" data-lenis-prevent id="s1" aria-labelledby="s1t"><div class="svc-in">
-  <button class="close" aria-label="Закрыть">&times;</button>
-  <h3 class="h" id="s1t">Разбор <span class="acc2">гардероба</span></h3>
-  <div class="cost-h">Стоимость:</div>
-  <div class="prices">
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span>Оффлайн:<br><em>10 000 / час</em></span></div>
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span>Онлайн:<br><em>+50% к стоимости</em></span></div>
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span>Предоплата <em>10 000</em><br>(не возвращается при отмене &lt; 5 часов)</span></div>
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span>Доплата за второго человека</span></div>
-  </div>
-  <div class="info">
-    <div>
-      <h4>Разбор гардероба</h4>
-      <ul><li>Заполнение анкеты + созвон (30 мин).</li><li>Анализ вещей (состояние, актуальность, сочетаемость).</li><li>Распределение на группы: оставить/убрать/подумать.</li><li>Создание 2-3 образов для каждого случая (если возможно).</li><li>Фото комплектов.</li></ul>
-      <h4>Шоппинг-сопровождение</h4>
-      <ul><li>Поиск недостающих вещей по списку.</li></ul>
-      <h4>Стилизация гардероба</h4>
-      <ul><li>Составление готовых образов.</li></ul>
-      <h4>Важно</h4>
-      <ul><li>Разбор — не критика, а поиск «врагов» гардероба.</li><li>Это первый шаг к удобному и стильному гардеробу.</li><li>Процесс требует времени: идеальные вещи ищутся постепенно.</li></ul>
-    </div>
-    <div>
-      <h4>Подготовка к разбору</h4>
-      <ul><li>Ваше присутствие обязательно (если не постоянный клиент).</li><li>Все вещи должны быть доступны (одежда, обувь, аксессуары).</li><li>Зеркало в полный рост, удобная одежда для примерок.</li><li>Время: 2-6 часов (перерыв по необходимости).</li><li>Разбор гардеробной &gt;6 м² может занять несколько дней.</li></ul>
-      <h4>После разбора вы:</h4>
-      <ul><li>Увидите, чего не хватает.</li><li>Научитесь комбинировать вещи.</li><li>Освободите место для новых покупок.</li></ul>
-    </div>
-  </div>
-  <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
-</div></dialog>
-
-<dialog class="svc" data-lenis-prevent id="s2" aria-labelledby="s2t"><div class="svc-in">
-  <button class="close" aria-label="Закрыть">&times;</button>
-  <h3 class="h" id="s2t">Шоппинг-<span class="acc2">сопровождение</span></h3>
-  <div class="cost-h">Стоимость:</div>
-  <div class="prices">
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span>После разбора:<br><em>20 000</em></span></div>
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span>Без разбора:<br><em>30 000</em></span></div>
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span>Предоплата <em>10 000</em><br>(не возвращается при отмене &lt; 5 часов)</span></div>
-  </div>
-  <div class="info">
-    <div>
-      <h4>Что входит:</h4>
-      <p><strong>После разбора гардероба:</strong></p>
-      <ul><li>Готовый шоппинг-лист.</li><li>4 часа шоппинга в Москве.</li></ul>
-      <p style="margin-top:10px"><strong>Без разбора:</strong></p>
-      <ul><li>Анкета, анализ фигуры, цели, бюджет.</li><li>4 часа шоппинга в Москве.</li></ul>
-      <h4>Условия:</h4>
-      <ul><li>Предоплата <strong>10 тыс. руб.</strong> (не возвращается при отмене &lt;5 часов).</li><li>При шоппинге без разбора предоплата вносится после определения задач.</li></ul>
-    </div>
-    <div>
-      <h4>Как проходит:</h4>
-      <ul><li>Подбор вещей по списку.</li><li>Оптимальный маршрут по ТЦ.</li><li>Предварительный прешоппинг (по возможности).</li><li>Помощь в примерке, консультации по стилю.</li></ul>
-      <h4>Результат:</h4>
-      <ul><li>Экономия времени, денег и нервов.</li><li>Только подходящие, модные и удобные вещи.</li><li>Уверенность в выборе и новых образах.</li></ul>
-    </div>
-  </div>
-  <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
-</div></dialog>
-
-<dialog class="svc" data-lenis-prevent id="s3" aria-labelledby="s3t"><div class="svc-in">
-  <button class="close" aria-label="Закрыть">&times;</button>
-  <h3 class="h" id="s3t">Стилизация <span class="acc2">комплектов</span></h3>
-  <div class="cost-h">Стоимость:</div>
-  <div class="prices">
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span><em>15 000 / час</em></span></div>
-  </div>
-  <div class="info">
-    <div>
-      <h4>Что входит:</h4>
-      <ul><li>Предварительный созвон</li><li>Определение целей, задач, объема работы</li><li>Составление шоппинг листа по необходимости</li><li>Фото образов</li><li>Файл или ссылка на готовые образы</li></ul>
-    </div>
-    <div>
-      <h4>Как проходит:</h4>
-      <ul><li>Вы предоставляете доступ к вещам которые необходимо застилизовать</li><li>Меряете готовые комплекты</li><li>Я фотографирую</li><li>Без примерки подбор образов не проводится</li></ul>
-      <p style="margin-top:10px;color:var(--muted)">(Стилизация без примерки ведет к образу, с неконтролируемым визуалом)</p>
-    </div>
-  </div>
-  <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
-</div></dialog>
-
-<dialog class="svc" data-lenis-prevent id="s4" aria-labelledby="s4t"><div class="svc-in">
-  <button class="close" aria-label="Закрыть">&times;</button>
-  <h3 class="h" id="s4t">Удаленный <span class="acc2">шоппинг</span></h3>
-  <div class="cost-h">Стоимость:</div>
-  <div class="prices">
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span><em>50 000</em></span></div>
-  </div>
-  <div class="info">
-    <div>
-      <h4>Что входит:</h4>
-      <ul><li>Анкетирование</li><li>Определение целей, задач и бюджета</li><li>Анализ ваших внешних данных (если работать начинаем первый раз)</li><li>Составление списка</li><li>Подбор вещей</li><li>Составление файла с картинками и сметой</li><li>Согласование файла</li><li>Закупка вещей</li><li>День примерки</li></ul>
-      <h4>Что вы получаете:</h4>
-      <ul><li>Экономия времени</li><li>Экономия денег на лишние траты</li><li>Примерка в привычной обстановке</li><li>Минимальный контакт с людьми</li><li>Отсутствие суеты</li><li>Классные вещи</li><li>Файл с готовыми образами</li><li>Возможность примерить новые вещи с уже имеющимися</li></ul>
-    </div>
-    <div>
-      <h4>Как проходит:</h4>
-      <ul><li><strong>Анализ</strong> – изучаю ваш запрос, бюджет и подбираю вещи.</li><li><strong>Согласование</strong> – утверждаем список, вы оплачиваете.</li><li><strong>Заказ</strong> – покупаю вещи (ко мне или вам).</li></ul>
-      <h4>Примерка (до 2 часов):</h4>
-      <ul><li>Меряем, составляем образы, фотографируем.</li><li>Возвращаем неподошедшее (чеки – вам).</li><li>Докупаем/меняем размер при необходимости.</li></ul>
-      <h4>Итог:</h4>
-      <ul><li>Фото новых вещей + готовые образы.</li><li>Рекомендации по сочетанию с вашим гардеробом.</li></ul>
-    </div>
-    <p class="remark">Если на примерке у вас появилась необходимость в дополнительном времени для стилизации новых вещей со своими имеющимися вещами - оплачивается по прайсу стилизация комплектов.</p>
-  </div>
-  <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
-</div></dialog>
-
-<dialog class="svc" data-lenis-prevent id="s5" aria-labelledby="s5t"><div class="svc-in">
-  <button class="close" aria-label="Закрыть">&times;</button>
-  <h3 class="h" id="s5t">Консультации <span class="acc2">(только онлайн)</span></h3>
-  <div class="cost-h">Стоимость:</div>
-  <div class="prices">
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span>Онлайн: <em>10 000</em></span></div>
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span>Предоплата <em>100 %</em></span></div>
-  </div>
-  <div class="info">
-    <div>
-      <h4>Что входит в Консультацию:</h4>
-      <ul><li>Анкетирование</li><li>Предварительное снятие запроса, какие цели и задачи</li><li>Анализ ваших внешних данных</li><li>Консультация</li></ul>
-      <h4>Что можете узнать на консультации:</h4>
-      <ul><li>Свой цветотип</li><li>Тип фигуры</li><li>Свои лучшие длины, силуэты фактуры, крой одежды</li><li>Как невербальной коммуникацией выразить свой запрос</li><li>С чего начать разбор гардероба самостоятельно</li><li>Какие тренды сейчас актуальны</li><li>Купить эту вещь или нет</li><li>Болевые точки - что хотели изменить, но не понимаете как</li><li>Какие аксессуары вам подходят</li><li>Какая сумка для вас базовая</li></ul>
-    </div>
-    <div>
-      <h4>Как проходит:</h4>
-      <ul><li>Онлайн</li><li>По времени консультация длится 1,5 - 2 часа</li><li>Стоимость 10 тыс. рублей</li><li>Предоплата 100 %</li></ul>
-      <h4>Что получите:</h4>
-      <ul><li>Ясность в вопросах своей внешности</li><li>Лучшие силуэты и фасоны для вашей фигуры</li><li>Что покупать, чего избегать</li><li>Какие аксессуары усилят ваш стиль</li><li>Легкость и уверенность от новых знаний</li><li>Ответы на свои вопросы</li><li>Полезный контакт эксперта в свою телефонную книжку</li></ul>
-    </div>
-  </div>
-  <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
-</div></dialog>
-
-<dialog class="svc" data-lenis-prevent id="s6" aria-labelledby="s6t"><div class="svc-in">
-  <button class="close" aria-label="Закрыть">&times;</button>
-  <h3 class="h" id="s6t">Лекции</h3>
-  <div class="cost-h">Стоимость:</div>
-  <div class="prices">
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span><em>По договоренности</em></span></div>
-  </div>
-  <div class="info">
-    <div>
-      <ul><li>Проведу лекцию на тему моды и стиля</li><li>Продолжительность 1-2 часа</li><li>Стоимость по договоренности</li></ul>
-    </div>
-  </div>
-  <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
-</div></dialog>
-
-<dialog class="svc" data-lenis-prevent id="s7" aria-labelledby="s7t"><div class="svc-in">
-  <button class="close" aria-label="Закрыть">&times;</button>
-  <h3 class="h" id="s7t">Сопровождение <span class="acc2">фотосъемки</span></h3>
-  <div class="cost-h">Стоимость:</div>
-  <div class="prices">
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span><em>10 000 / 2 часа</em></span></div>
-  </div>
-  <div class="note-big">(только если образы подобраны мной)</div>
-  <div class="info">
-    <div>
-      <h4>Что входит:</h4>
-      <ul><li>Нахождение с вами на фотосъемке,</li><li>Отслеживание композиции кадра</li><li>Контроль за положением аксессуаров, прически, одежды</li><li>Помощь в компоновке образов</li><li>Отпаривание вещей по необходимости</li></ul>
-    </div>
-    <div>
-      <h4>Что получаете:</h4>
-      <ul><li>Больше хороших кадров</li><li>Уверенность</li><li>Поддержку профессионала</li></ul>
-    </div>
-  </div>
-  <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
-</div></dialog>
-
-<dialog class="svc" data-lenis-prevent id="s8" aria-labelledby="s8t"><div class="svc-in">
-  <button class="close" aria-label="Закрыть">&times;</button>
-  <h3 class="h" id="s8t">Подбор образов <span class="acc2">на мероприятие или фотосъемку</span></h3>
-  <div class="cost-h">Стоимость:</div>
-  <div class="prices">
-    <div class="price"><img src="img/icon-ruble.png" alt=""><span><em>от 30 000</em></span></div>
-  </div>
-  <div class="info">
-    <div>
-      <h4>Что входит:</h4>
-      <ul><li>Анкетирование</li><li>Выявление целей и задач</li><li>Анализ локации съемки</li><li>Подбор образа (закупка новых вещей или составление комплектов из вашего гардероба)</li><li>Составление Мудборда с рекомендуемыми позами и комплектами (для фотосессии)</li></ul>
-    </div>
-    <div>
-      <h4>Что получаете:</h4>
-      <ul><li>Экономия времени</li><li>Экономия нервов</li><li>Продуманный, прогнозируемый результат</li><li>Разнообразие кадров</li></ul>
-    </div>
-    <p class="remark">Стоимость от 30 тыс. руб. ( 2-5 образов ) - в зависимости от количества комплектов и уникальности запрашиваемой стилистики.</p>
-  </div>
-  <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
-</div></dialog>
-
-<!-- FAQ -->
-<section class="faq">
-  <div class="wrap">
-    <h2 class="h h2 rv">Популярные <span class="acc2">вопросы</span></h2>
-    <details class="qa"><summary>Проводите ли вы мужской шоппинг?<i></i></summary>
-      <div class="a"><p>На данный момент нет, сейчас мой фокус полностью на женской аудитории</p></div></details>
-    <details class="qa"><summary>На какой бюджет рассчитывать?<i></i></summary>
-      <div class="a"><p>Чтобы собрать мини - капсулу, где будет одна верхняя одежда, сумка, обувь, несколько аксессуаров, жакет, пару низов и несколько рубашек, топов - примерно 300 - 350 тыс. руб.</p><p>Стоимость образа на мероприятие зависит от вашего бюджета и сложности запроса, что - то можно арендовать, а что-то купить - все обсуждаем заранее.</p></div></details>
-    <details class="qa"><summary>Могу ли я изменить забронированную дату?<i></i></summary>
-      <div class="a"><p>Да, можете, но за 24 часа до назначенного времени.</p></div></details>
-    <details class="qa"><summary>Если за время шоппинга мы ничего не купим?<i></i></summary>
-      <div class="a"><p>Такая ситуация сведена к минимуму, потому что я заранее изучаю шоппинг маршрут, вашу фигуру и наличие размеров и моделей в магазине.</p><p>Но если так случится, то без одежды вы не останетесь, будем смотреть по ситуации и искать варианты решения.</p></div></details>
-  </div>
-</section>
-
-<!-- TELEGRAM -->
-<section class="tg">
-  <div class="wrap">
-    <a class="rv" href="https://t.me/yourwindofchange" target="_blank" rel="noopener">
+    <div class="sec-head rv">
+      <span class="label n">Услуги и стоимость</span>
       <div>
-        <div class="h">Подробнее познакомиться можно подписавшись на <span class="acc">мой телеграм-канал</span></div>
-        <p>Подписывайся, чтобы узнать все о стиле</p>
+        <h2 class="serif h2">Чем я могу <em>помочь</em></h2>
+        <p>Нажмите на услугу, чтобы увидеть, что в неё входит и как проходит работа.</p>
       </div>
-      <div class="ico"><img src="img/telegram-big.svg" alt="Telegram"></div>
+    </div>
+    <details class="srv" id="srv-1">
+      <summary><span class="no">01</span><span class="nm">Разбор гардероба</span><span class="rs">Увидите, чего не хватает, научитесь комбинировать вещи и освободите место для новых покупок.</span><span class="pr">10 000 ₽ / час</span><span class="tg" aria-hidden="true"></span></summary>
+      <div class="srv-body"><div class="srv-in">
+        <div class="cost-h">Стоимость:</div>
+        <div class="prices">
+        <div class="price"><span>Оффлайн:<br><em>10 000 / час</em></span></div>
+        <div class="price"><span>Онлайн:<br><em>+50% к стоимости</em></span></div>
+        <div class="price"><span>Предоплата <em>10 000</em><br>(не возвращается при отмене &lt; 5 часов)</span></div>
+        <div class="price"><span>Доплата за второго человека</span></div>
+        </div>
+        <div class="info">
+        <div>
+        <h4>Разбор гардероба</h4>
+        <ul><li>Заполнение анкеты + созвон (30 мин).</li><li>Анализ вещей (состояние, актуальность, сочетаемость).</li><li>Распределение на группы: оставить/убрать/подумать.</li><li>Создание 2-3 образов для каждого случая (если возможно).</li><li>Фото комплектов.</li></ul>
+        <h4>Шоппинг-сопровождение</h4>
+        <ul><li>Поиск недостающих вещей по списку.</li></ul>
+        <h4>Стилизация гардероба</h4>
+        <ul><li>Составление готовых образов.</li></ul>
+        <h4>Важно</h4>
+        <ul><li>Разбор — не критика, а поиск «врагов» гардероба.</li><li>Это первый шаг к удобному и стильному гардеробу.</li><li>Процесс требует времени: идеальные вещи ищутся постепенно.</li></ul>
+        </div>
+        <div>
+        <h4>Подготовка к разбору</h4>
+        <ul><li>Ваше присутствие обязательно (если не постоянный клиент).</li><li>Все вещи должны быть доступны (одежда, обувь, аксессуары).</li><li>Зеркало в полный рост, удобная одежда для примерок.</li><li>Время: 2-6 часов (перерыв по необходимости).</li><li>Разбор гардеробной &gt;6 м² может занять несколько дней.</li></ul>
+        <h4>После разбора вы:</h4>
+        <ul><li>Увидите, чего не хватает.</li><li>Научитесь комбинировать вещи.</li><li>Освободите место для новых покупок.</li></ul>
+        </div>
+        </div>
+        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
+      </div></div>
+    </details>
+    <details class="srv" id="srv-2">
+      <summary><span class="no">02</span><span class="nm">Шоппинг-сопровождение</span><span class="rs">Только подходящие, модные и удобные вещи. Экономия времени, денег и нервов.</span><span class="pr">от 20 000 ₽</span><span class="tg" aria-hidden="true"></span></summary>
+      <div class="srv-body"><div class="srv-in">
+        <div class="cost-h">Стоимость:</div>
+        <div class="prices">
+        <div class="price"><span>После разбора:<br><em>20 000</em></span></div>
+        <div class="price"><span>Без разбора:<br><em>30 000</em></span></div>
+        <div class="price"><span>Предоплата <em>10 000</em><br>(не возвращается при отмене &lt; 5 часов)</span></div>
+        </div>
+        <div class="info">
+        <div>
+        <h4>Что входит:</h4>
+        <p><strong>После разбора гардероба:</strong></p>
+        <ul><li>Готовый шоппинг-лист.</li><li>4 часа шоппинга в Москве.</li></ul>
+        <p style="margin-top:10px"><strong>Без разбора:</strong></p>
+        <ul><li>Анкета, анализ фигуры, цели, бюджет.</li><li>4 часа шоппинга в Москве.</li></ul>
+        <h4>Условия:</h4>
+        <ul><li>Предоплата <strong>10 тыс. руб.</strong> (не возвращается при отмене &lt;5 часов).</li><li>При шоппинге без разбора предоплата вносится после определения задач.</li></ul>
+        </div>
+        <div>
+        <h4>Как проходит:</h4>
+        <ul><li>Подбор вещей по списку.</li><li>Оптимальный маршрут по ТЦ.</li><li>Предварительный прешоппинг (по возможности).</li><li>Помощь в примерке, консультации по стилю.</li></ul>
+        <h4>Результат:</h4>
+        <ul><li>Экономия времени, денег и нервов.</li><li>Только подходящие, модные и удобные вещи.</li><li>Уверенность в выборе и новых образах.</li></ul>
+        </div>
+        </div>
+        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
+      </div></div>
+    </details>
+    <details class="srv" id="srv-3">
+      <summary><span class="no">03</span><span class="nm">Стилизация комплектов</span><span class="rs">Фото образов и файл с готовыми образами из ваших вещей.</span><span class="pr">15 000 ₽ / час</span><span class="tg" aria-hidden="true"></span></summary>
+      <div class="srv-body"><div class="srv-in">
+        <div class="cost-h">Стоимость:</div>
+        <div class="prices">
+        <div class="price"><span><em>15 000 / час</em></span></div>
+        </div>
+        <div class="info">
+        <div>
+        <h4>Что входит:</h4>
+        <ul><li>Предварительный созвон</li><li>Определение целей, задач, объема работы</li><li>Составление шоппинг листа по необходимости</li><li>Фото образов</li><li>Файл или ссылка на готовые образы</li></ul>
+        </div>
+        <div>
+        <h4>Как проходит:</h4>
+        <ul><li>Вы предоставляете доступ к вещам которые необходимо застилизовать</li><li>Меряете готовые комплекты</li><li>Я фотографирую</li><li>Без примерки подбор образов не проводится</li></ul>
+        <p style="margin-top:10px;color:var(--muted)">(Стилизация без примерки ведет к образу, с неконтролируемым визуалом)</p>
+        </div>
+        </div>
+        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
+      </div></div>
+    </details>
+    <details class="srv" id="srv-4">
+      <summary><span class="no">04</span><span class="nm">Удаленный шоппинг</span><span class="rs">Фото новых вещей + готовые образы. Примерка в привычной обстановке.</span><span class="pr">50 000 ₽</span><span class="tg" aria-hidden="true"></span></summary>
+      <div class="srv-body"><div class="srv-in">
+        <div class="cost-h">Стоимость:</div>
+        <div class="prices">
+        <div class="price"><span><em>50 000</em></span></div>
+        </div>
+        <div class="info">
+        <div>
+        <h4>Что входит:</h4>
+        <ul><li>Анкетирование</li><li>Определение целей, задач и бюджета</li><li>Анализ ваших внешних данных (если работать начинаем первый раз)</li><li>Составление списка</li><li>Подбор вещей</li><li>Составление файла с картинками и сметой</li><li>Согласование файла</li><li>Закупка вещей</li><li>День примерки</li></ul>
+        <h4>Что вы получаете:</h4>
+        <ul><li>Экономия времени</li><li>Экономия денег на лишние траты</li><li>Примерка в привычной обстановке</li><li>Минимальный контакт с людьми</li><li>Отсутствие суеты</li><li>Классные вещи</li><li>Файл с готовыми образами</li><li>Возможность примерить новые вещи с уже имеющимися</li></ul>
+        </div>
+        <div>
+        <h4>Как проходит:</h4>
+        <ul><li><strong>Анализ</strong> – изучаю ваш запрос, бюджет и подбираю вещи.</li><li><strong>Согласование</strong> – утверждаем список, вы оплачиваете.</li><li><strong>Заказ</strong> – покупаю вещи (ко мне или вам).</li></ul>
+        <h4>Примерка (до 2 часов):</h4>
+        <ul><li>Меряем, составляем образы, фотографируем.</li><li>Возвращаем неподошедшее (чеки – вам).</li><li>Докупаем/меняем размер при необходимости.</li></ul>
+        <h4>Итог:</h4>
+        <ul><li>Фото новых вещей + готовые образы.</li><li>Рекомендации по сочетанию с вашим гардеробом.</li></ul>
+        </div>
+        <p class="remark">Если на примерке у вас появилась необходимость в дополнительном времени для стилизации новых вещей со своими имеющимися вещами - оплачивается по прайсу стилизация комплектов.</p>
+        </div>
+        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
+      </div></div>
+    </details>
+    <details class="srv" id="srv-5">
+      <summary><span class="no">05</span><span class="nm">Консультации (только онлайн)</span><span class="rs">Ясность в вопросах своей внешности: цветотип, тип фигуры, лучшие силуэты.</span><span class="pr">10 000 ₽</span><span class="tg" aria-hidden="true"></span></summary>
+      <div class="srv-body"><div class="srv-in">
+        <div class="cost-h">Стоимость:</div>
+        <div class="prices">
+        <div class="price"><span>Онлайн: <em>10 000</em></span></div>
+        <div class="price"><span>Предоплата <em>100 %</em></span></div>
+        </div>
+        <div class="info">
+        <div>
+        <h4>Что входит в Консультацию:</h4>
+        <ul><li>Анкетирование</li><li>Предварительное снятие запроса, какие цели и задачи</li><li>Анализ ваших внешних данных</li><li>Консультация</li></ul>
+        <h4>Что можете узнать на консультации:</h4>
+        <ul><li>Свой цветотип</li><li>Тип фигуры</li><li>Свои лучшие длины, силуэты фактуры, крой одежды</li><li>Как невербальной коммуникацией выразить свой запрос</li><li>С чего начать разбор гардероба самостоятельно</li><li>Какие тренды сейчас актуальны</li><li>Купить эту вещь или нет</li><li>Болевые точки - что хотели изменить, но не понимаете как</li><li>Какие аксессуары вам подходят</li><li>Какая сумка для вас базовая</li></ul>
+        </div>
+        <div>
+        <h4>Как проходит:</h4>
+        <ul><li>Онлайн</li><li>По времени консультация длится 1,5 - 2 часа</li><li>Стоимость 10 тыс. рублей</li><li>Предоплата 100 %</li></ul>
+        <h4>Что получите:</h4>
+        <ul><li>Ясность в вопросах своей внешности</li><li>Лучшие силуэты и фасоны для вашей фигуры</li><li>Что покупать, чего избегать</li><li>Какие аксессуары усилят ваш стиль</li><li>Легкость и уверенность от новых знаний</li><li>Ответы на свои вопросы</li><li>Полезный контакт эксперта в свою телефонную книжку</li></ul>
+        </div>
+        </div>
+        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
+      </div></div>
+    </details>
+    <details class="srv" id="srv-6">
+      <summary><span class="no">06</span><span class="nm">Лекции</span><span class="rs">Лекция на тему моды и стиля, 1-2 часа.</span><span class="pr">по договоренности</span><span class="tg" aria-hidden="true"></span></summary>
+      <div class="srv-body"><div class="srv-in">
+        <div class="cost-h">Стоимость:</div>
+        <div class="prices">
+        <div class="price"><span><em>По договоренности</em></span></div>
+        </div>
+        <div class="info">
+        <div>
+        <ul><li>Проведу лекцию на тему моды и стиля</li><li>Продолжительность 1-2 часа</li><li>Стоимость по договоренности</li></ul>
+        </div>
+        </div>
+        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
+      </div></div>
+    </details>
+    <details class="srv" id="srv-7">
+      <summary><span class="no">07</span><span class="nm">Сопровождение фотосъемки</span><span class="rs">Больше хороших кадров, уверенность и поддержка профессионала.</span><span class="pr">10 000 ₽ / 2 часа</span><span class="tg" aria-hidden="true"></span></summary>
+      <div class="srv-body"><div class="srv-in">
+        <div class="cost-h">Стоимость:</div>
+        <div class="prices">
+        <div class="price"><span><em>10 000 / 2 часа</em></span></div>
+        </div>
+        <div class="note-big">(только если образы подобраны мной)</div>
+        <div class="info">
+        <div>
+        <h4>Что входит:</h4>
+        <ul><li>Нахождение с вами на фотосъемке,</li><li>Отслеживание композиции кадра</li><li>Контроль за положением аксессуаров, прически, одежды</li><li>Помощь в компоновке образов</li><li>Отпаривание вещей по необходимости</li></ul>
+        </div>
+        <div>
+        <h4>Что получаете:</h4>
+        <ul><li>Больше хороших кадров</li><li>Уверенность</li><li>Поддержку профессионала</li></ul>
+        </div>
+        </div>
+        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
+      </div></div>
+    </details>
+    <details class="srv" id="srv-8">
+      <summary><span class="no">08</span><span class="nm">Подбор образов на мероприятие или фотосъемку</span><span class="rs">Продуманный, прогнозируемый результат и разнообразие кадров.</span><span class="pr">от 30 000 ₽</span><span class="tg" aria-hidden="true"></span></summary>
+      <div class="srv-body"><div class="srv-in">
+        <div class="cost-h">Стоимость:</div>
+        <div class="prices">
+        <div class="price"><span><em>от 30 000</em></span></div>
+        </div>
+        <div class="info">
+        <div>
+        <h4>Что входит:</h4>
+        <ul><li>Анкетирование</li><li>Выявление целей и задач</li><li>Анализ локации съемки</li><li>Подбор образа (закупка новых вещей или составление комплектов из вашего гардероба)</li><li>Составление Мудборда с рекомендуемыми позами и комплектами (для фотосессии)</li></ul>
+        </div>
+        <div>
+        <h4>Что получаете:</h4>
+        <ul><li>Экономия времени</li><li>Экономия нервов</li><li>Продуманный, прогнозируемый результат</li><li>Разнообразие кадров</li></ul>
+        </div>
+        <p class="remark">Стоимость от 30 тыс. руб. ( 2-5 образов ) - в зависимости от количества комплектов и уникальности запрашиваемой стилистики.</p>
+        </div>
+        <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a></div>
+      </div></div>
+    </details>
+    <div class="svc-cta rv">
+      <p class="serif">Не уверены, с чего начать? Напишите — подберём формат <em>под ваш запрос.</em></p>
+      <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PHILOSOPHY -->
+<section class="philo" id="approach">
+  <div class="philo-photo"><img src="img/404-photo.webp" alt="Надежда Родионова" loading="lazy"></div>
+  <div class="philo-text">
+    <span class="label">Философия работы</span>
+    <p class="serif rv">В работе ценю честность, прозрачность, <em>партнерство, доверие.</em></p>
+    <ol class="principles">
+      <li>Я не публикую фото клиентов ДО, потому что партнёрство предполагает уважение</li>
+      <li>Я уважаю ваш прошлый опыт и выбор одежды</li>
+      <li>Я не нуждаюсь в рекламе своих услуг за счет вашего незнания темы стиля</li>
+      <li>Оценить мой профессионализм вы можете работая со мной лично</li>
+    </ol>
+  </div>
+</section>
+
+<!-- 5. ABOUT / EXPERTISE -->
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo rv"><span class="cap">Надежда Родионова</span><img src="img/about-portrait.webp" width="644" height="1120" alt="Надежда Родионова" loading="lazy"></div>
+    <div class="about-text rv">
+      <span class="label n">Обо мне</span>
+      <h2 class="serif h2">В стилистике <em>с 2019 года</em></h2>
+      <p>Я прошла долгий путь от новичка к эксперту. Не гонюсь за быстрыми трендами, рекомендую качественные, актуальные вещи, не на один сезон, немного добавляю тренды, слушаю и слышу клиента, не запрещаю, а мягко направляю, заставляю задумываться, прежде чем купить.</p>
+      <p>В прошлом заядлый шопоголик, у меня большая насмотренность, умею находить вещи визуально выглядящие дороже, чем стоят. Знаю про сегмент люкс все, даже как купить самую желанную сумку в мире без байеров.</p>
+      <div class="facts">
+        <div><b>1811, EMKA</b>12 Stories, Present Simple, Sanchy и др.</div>
+        <div><b>Русские бренды</b>Lamoda — редко, Wildberries — как исключение</div>
+        <div><b>Люкс</b>знаю сегмент изнутри</div>
+      </div>
+      <p class="quote-line">«Я не фея. Хороший результат также зависит от вас. Но я могу сделать вас лучшей версией себя!»</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6–7. EDUCATION + REVIEWS (one block) -->
+<section class="sec trust" id="reviews">
+  <div class="wrap trust-grid">
+    <div class="trust-col" id="education">
+      <span class="label n rv">Образование</span>
+      <h2 class="serif t-h rv">Дипломы <em>и сертификаты</em></h2>
+      <div class="edu">
+      <button class="rv" data-lb="img/diploma-1.webp"><span class="fr"><img src="img/diploma-1.webp" alt="Диплом о профессиональной переподготовке, имиджмейкинг" loading="lazy"></span><span class="ec">Имиджмейкинг · 2019</span></button>
+      <button class="rv" data-lb="img/diploma-2.webp"><span class="fr"><img src="img/diploma-2.webp" alt="Сертификат International University Global Coaching" loading="lazy"></span><span class="ec">Coaching · ACSTH</span></button>
+      <button class="rv" data-lb="img/diploma-3.webp"><span class="fr"><img src="img/diploma-3.webp" alt="Сертификат Школы Коллекционеров и Экспертов" loading="lazy"></span><span class="ec">Школа экспертов</span></button>
+      <button class="rv" data-lb="img/diploma-4.webp"><span class="fr"><img src="img/diploma-4.webp" alt="Сертификат большого онлайн-курса по персональному стайлингу" loading="lazy"></span><span class="ec">Стайлинг · 2025</span></button>
+    </div>
+    </div>
+    <div class="trust-col">
+      <span class="label n rv">Отзывы</span>
+      <h2 class="serif t-h rv">Слова <em>клиентов</em></h2>
+      <div class="slider">
+        <div class="nav" data-for="rev"></div>
+        <div class="track" id="rev">
+        <button data-lb="img/review-2.webp" aria-label="Открыть отзыв"><img src="img/review-2.webp" alt="Отзыв клиента"></button>
+        <button data-lb="img/review-1.webp" aria-label="Открыть отзыв"><img src="img/review-1.webp" alt="Отзыв клиента"></button>
+        <button data-lb="img/review-4.webp" aria-label="Открыть отзыв"><img src="img/review-4.webp" alt="Отзыв клиента"></button>
+        <button data-lb="img/review-3.webp" aria-label="Открыть отзыв"><img src="img/review-3.webp" alt="Отзыв клиента"></button>
+        <button data-lb="img/review-5.webp" aria-label="Открыть отзыв"><img src="img/review-5.webp" alt="Отзыв клиента"></button>
+      </div>
+        <div class="dots" data-for="rev"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. BLOG -->
+<section style="padding:120px 0 0">
+  <div class="wrap">
+    <a class="blog rv" href="https://t.me/yourwindofchange" target="_blank" rel="noopener">
+      <span class="label n">Блог</span>
+      <div><p class="serif">Подробнее познакомиться можно в моём <em>телеграм-канале</em></p><p>Подписывайся, чтобы узнать все о стиле</p></div>
+      <span class="link">Читать канал</span>
     </a>
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section class="gal">
-  <div class="wrap">
-    <h2 class="h h2 rv">Образование</h2>
-    <div class="slider s-dipl">
-    <div class="nav" data-for="dipl"></div>
-    <div class="track dipl" id="dipl">
-      <button data-lb="img/diploma-1.webp" aria-label="Открыть диплом 1"><img src="img/diploma-1.webp" alt="Диплом стилиста-имиджмейкера"></button>
-      <button data-lb="img/diploma-2.webp" aria-label="Открыть диплом 2"><img src="img/diploma-2.webp" alt="Диплом / сертификат"></button>
-      <button data-lb="img/diploma-3.webp" aria-label="Открыть диплом 3"><img src="img/diploma-3.webp" alt="Диплом / сертификат"></button>
-      <button data-lb="img/diploma-4.webp" aria-label="Открыть диплом 4"><img src="img/diploma-4.webp" alt="Диплом / сертификат"></button>
-    </div>
-    <div class="dots" data-for="dipl"></div>
+<!-- 9. FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-grid">
+    <div class="rv"><span class="label n">Вопросы</span><h2 class="serif h2" style="margin-top:22px">Популярные <em>вопросы</em></h2></div>
+    <div>
+      <details class="qa"><summary>Проводите ли вы мужской шоппинг?<i></i></summary>
+        <div class="a"><p>На данный момент нет, сейчас мой фокус полностью на женской аудитории</p></div></details>
+      <details class="qa"><summary>На какой бюджет рассчитывать?<i></i></summary>
+        <div class="a"><p>Чтобы собрать мини - капсулу, где будет одна верхняя одежда, сумка, обувь, несколько аксессуаров, жакет, пару низов и несколько рубашек, топов - примерно 300 - 350 тыс. руб.</p><p>Стоимость образа на мероприятие зависит от вашего бюджета и сложности запроса, что - то можно арендовать, а что-то купить - все обсуждаем заранее.</p></div></details>
+      <details class="qa"><summary>Могу ли я изменить забронированную дату?<i></i></summary>
+        <div class="a"><p>Да, можете, но за 24 часа до назначенного времени.</p></div></details>
+      <details class="qa"><summary>Если за время шоппинга мы ничего не купим?<i></i></summary>
+        <div class="a"><p>Такая ситуация сведена к минимуму, потому что я заранее изучаю шоппинг маршрут, вашу фигуру и наличие размеров и моделей в магазине.</p><p>Но если так случится, то без одежды вы не останетесь, будем смотреть по ситуации и искать варианты решения.</p></div></details>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="gal" style="padding-top:0">
+<!-- 10. BOOKING -->
+<section class="contact" id="contact" style="border-top:1px solid var(--line)">
   <div class="wrap">
-    <h2 class="h h2 rv">Отзывы</h2>
-    <div class="slider s-rev">
-    <div class="nav" data-for="rev"></div>
-    <div class="track rev" id="rev">
-      <button data-lb="img/review-2.webp" aria-label="Открыть отзыв"><img src="img/review-2.webp" alt="Отзыв клиента"></button>
-      <button data-lb="img/review-1.webp" aria-label="Открыть отзыв"><img src="img/review-1.webp" alt="Отзыв клиента"></button>
-      <button data-lb="img/review-4.webp" aria-label="Открыть отзыв"><img src="img/review-4.webp" alt="Отзыв клиента"></button>
-      <button data-lb="img/review-3.webp" aria-label="Открыть отзыв"><img src="img/review-3.webp" alt="Отзыв клиента"></button>
-      <button data-lb="img/review-5.webp" aria-label="Открыть отзыв"><img src="img/review-5.webp" alt="Отзыв клиента"></button>
+    <span class="label rv">Запись</span>
+    <h2 class="serif rv">Забронировать <em>дату</em></h2>
+    <p class="sub rv">Напишите в Telegram — обсудим ваш запрос и подберём удобное время.</p>
+    <div class="ct-row rv">
+      <a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться в Telegram <span class="ar">→</span></a>
     </div>
-    <div class="dots" data-for="rev"></div>
+    <div class="ct-links rv">
+      <a class="link" href="mailto:nadezda.rodionova@gmail.com">nadezda.rodionova@gmail.com</a>
+      <a class="link" href="https://t.me/yourwindofchange" target="_blank" rel="noopener">Телеграм-канал о стиле</a>
     </div>
-    <div style="text-align:center;margin-top:40px"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
   </div>
 </section>
+</main>
 
 <footer>
-  <div class="f-links"><a href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Telegram</a><a href="mailto:nadezda.rodionova@gmail.com">E-mail</a><a href="https://t.me/yourwindofchange" target="_blank" rel="noopener">Канал о стиле</a></div>
-  © 2025 Надежда Родионова. Персональный стилист
+  <div class="wrap">
+    <div class="ft-grid">
+      <div><a class="logo" href="#top"><b>Надежда Родионова</b><span>персональный стилист</span></a><p>Диплом стилиста имиджмейкера. В стилистике с 2019 года. Онлайн и оффлайн, Москва.</p></div>
+      <div><h4>Разделы</h4><ul><li><a href="#services">Услуги и цены</a></li><li><a href="#approach">Подход</a></li><li><a href="#about">Обо мне</a></li><li><a href="#education">Образование</a></li><li><a href="#reviews">Отзывы</a></li><li><a href="#faq">Вопросы</a></li></ul></div>
+      <div><h4>Контакты</h4><ul><li><a href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Telegram — запись</a></li><li><a href="mailto:nadezda.rodionova@gmail.com">nadezda.rodionova@gmail.com</a></li><li><a href="https://t.me/yourwindofchange" target="_blank" rel="noopener">Канал о стиле</a></li></ul></div>
+    </div>
+    <div class="ft-bot"><span>© 2025 Надежда Родионова. Персональный стилист</span><a href="#top">Наверх ↑</a></div>
+  </div>
 </footer>
 
+<div class="mbook" id="mbook"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться на консультацию</a></div>
 <div class="lb" id="lb" role="dialog" aria-label="Просмотр изображения"><img alt=""></div>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
-const reduce=false; // плавность включена всегда (по просьбе владельца сайта)
-// smooth wheel scrolling
+// smooth wheel scrolling (responsive, not sluggish)
 let lenis=null;
-if(window.Lenis&&!reduce){
-  lenis=new Lenis({lerp:0.16,smoothWheel:true,wheelMultiplier:1.15,anchors:true});
+if(window.Lenis){
+  lenis=new Lenis({lerp:0.16,smoothWheel:true,wheelMultiplier:1.15});
   const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf);
 }
 const lockScroll=on=>{if(lenis)on?lenis.stop():lenis.start();};
-
-// service dialogs (open / animated close)
-document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{
-  const d=document.getElementById(b.dataset.open); d.classList.remove('closing'); d.showModal(); d.scrollTop=0; lockScroll(true);
-}));
-const closeDlg=d=>{if(!d.open||d.classList.contains('closing'))return; d.classList.add('closing');
-  setTimeout(()=>{d.close();d.classList.remove('closing');},reduce?0:270);};
-document.querySelectorAll('dialog.svc').forEach(d=>{
-  d.querySelector('.close').addEventListener('click',()=>closeDlg(d));
-  d.addEventListener('click',e=>{if(e.target===d)closeDlg(d);});
-  d.addEventListener('cancel',e=>{e.preventDefault();closeDlg(d);});
-  d.addEventListener('close',()=>lockScroll(false));
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]'); if(!a)return;
+  const id=a.getAttribute('href'); const t=id==='#top'||id==='#'?document.body:document.querySelector(id); if(!t)return;
+  e.preventDefault(); document.body.classList.remove('nav-open'); if(lenis)lenis.start();
+  if(lenis) lenis.scrollTo(t===document.body?0:t,{offset:t===document.body?0:-78,duration:1.4,easing:x=>1-Math.pow(1-x,4)});
+  else (t===document.body?window.scrollTo({top:0,behavior:'smooth'}):t.scrollIntoView({behavior:'smooth'}));
+  history.replaceState(null,'',id==='#top'?location.pathname:id);
 });
+
+// header + mobile menu + sticky booking
+const hdr=document.getElementById('hdr'), mbook=document.getElementById('mbook'), hero=document.getElementById('top');
+const onY=()=>{const y=scrollY;hdr.classList.toggle('scrolled',y>20);mbook.classList.toggle('on',y>hero.offsetHeight*.8&&y<document.body.scrollHeight-innerHeight*1.6);};
+addEventListener('scroll',onY,{passive:true});onY();
+const burger=document.getElementById('burger');
+const setNav=o=>{document.body.classList.toggle('nav-open',o);burger.setAttribute('aria-expanded',o);lockScroll(o);};
+burger.addEventListener('click',()=>setNav(!document.body.classList.contains('nav-open')));
+document.querySelectorAll('#mnav a').forEach(a=>a.addEventListener('click',()=>setNav(false)));
 
 // lightbox
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
 const openLb=src=>{lbi.src=src;lb.classList.add('on');lockScroll(true);};
 const closeLb=()=>{if(!lb.classList.contains('on'))return;lb.classList.remove('on');lockScroll(false);};
 lb.addEventListener('click',closeLb);
-addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();setNav(false);}});
+document.querySelectorAll('.edu [data-lb]').forEach(b=>b.addEventListener('click',()=>openLb(b.dataset.lb)));
 
-// sliders: centered active slide, neighbours dimmed
-const ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>';
+// accordions (services + FAQ): smooth height, one open per group
+const animDet=(d,open)=>{
+  const body=d.querySelector('.srv-body,.a');
+  if(open){d.open=true;const h=body.scrollHeight;body.animate([{height:'0px',opacity:0},{height:h+'px',opacity:1}],{duration:560,easing:'cubic-bezier(.22,.8,.24,1)'});}
+  else{const h=body.scrollHeight;const an=body.animate([{height:h+'px',opacity:1},{height:'0px',opacity:0}],{duration:380,easing:'ease'});an.onfinish=()=>{d.open=false;};}
+};
+['.srv','.qa'].forEach(sel=>{
+  const group=[...document.querySelectorAll(sel)];
+  group.forEach(d=>d.querySelector('summary').addEventListener('click',e=>{
+    e.preventDefault();
+    if(d.open){animDet(d,false);return;}
+    group.forEach(o=>{if(o!==d&&o.open)animDet(o,false);});
+    animDet(d,true);
+    if(sel==='.srv'&&lenis)setTimeout(()=>lenis.scrollTo(d,{offset:-90,duration:1}),120);
+  }));
+});
+
+// reviews: infinite centred slider (neighbours faded)
+const ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>';
 document.querySelectorAll('.track').forEach(tr=>{
   const nav=document.querySelector('.nav[data-for="'+tr.id+'"]'), dots=document.querySelector('.dots[data-for="'+tr.id+'"]');
-  // infinite loop: [clones][originals][clones]; after scrolling stops on a clone we jump silently to its original
   const orig=[...tr.children], N=orig.length;
-  const mk=(el)=>{const c=el.cloneNode(true);c.setAttribute('aria-hidden','true');c.tabIndex=-1;return c;};
-  orig.slice().reverse().forEach(el=>tr.prepend(mk(el)));
-  orig.forEach(el=>tr.append(mk(el)));
+  const mk=el=>{const c=el.cloneNode(true);c.setAttribute('aria-hidden','true');c.tabIndex=-1;return c;};
+  orig.slice().reverse().forEach(el=>tr.prepend(mk(el))); orig.forEach(el=>tr.append(mk(el)));
   const all=[...tr.children];
   nav.innerHTML='<button aria-label="Назад">'+ARROW+'</button><button aria-label="Вперёд" style="transform:scaleX(-1)">'+ARROW+'</button>';
-  dots.innerHTML=orig.map((_,i)=>'<i role="button" aria-label="Слайд '+(i+1)+'"></i>').join('');
-  const [prev,next]=nav.children; let cur=-1, endT=0;
+  dots.innerHTML=orig.map((_,i)=>'<i role="button" aria-label="Отзыв '+(i+1)+'"></i>').join('');
+  const [prev,next]=nav.children; let cur=-1, endT=0, target=null, targetT=0;
   const leftOf=i=>all[i].offsetLeft-(tr.clientWidth-all[i].offsetWidth)/2;
-  let target=null, targetT=0;
   const go=i=>{i=Math.max(0,Math.min(all.length-1,i));target=i;targetT=Date.now();tr.scrollTo({left:leftOf(i),behavior:'smooth'});};
+  const nearest=()=>{const c=tr.scrollLeft+tr.clientWidth/2;let b=0,bd=1e9;all.forEach((it,i)=>{const d=Math.abs(it.offsetLeft+it.offsetWidth/2-c);if(d<bd){bd=d;b=i;}});return b;};
   const base=()=>(target!==null&&Date.now()-targetT<900)?target:nearest();
-  const nearest=()=>{const c=tr.scrollLeft+tr.clientWidth/2;let b=0,bd=1e9;
-    all.forEach((it,i)=>{const d=Math.abs(it.offsetLeft+it.offsetWidth/2-c);if(d<bd){bd=d;b=i;}});return b;};
-  const setActive=i=>{cur=i;all.forEach((it,k)=>it.classList.toggle('active',k===i));
-    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i%N));};
-  const jump=i=>{ // instant reposition without animation
-    tr.classList.add('jumping');tr.style.scrollBehavior='auto';tr.style.scrollSnapType='none';
-    tr.scrollLeft=leftOf(i);setActive(i);
-    setTimeout(()=>{tr.style.scrollBehavior='';tr.style.scrollSnapType='';tr.classList.remove('jumping');},50);
-  };
+  const setActive=i=>{cur=i;all.forEach((it,k)=>it.classList.toggle('active',k===i));[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i%N));};
+  const jump=i=>{tr.classList.add('jumping');tr.style.scrollBehavior='auto';tr.style.scrollSnapType='none';tr.scrollLeft=leftOf(i);setActive(i);
+    setTimeout(()=>{tr.style.scrollBehavior='';tr.style.scrollSnapType='';tr.classList.remove('jumping');},50);};
   const settle=()=>{target=null;const i=nearest();if(i<N||i>=2*N)jump(i%N+N);else if(i!==cur)setActive(i);};
   const onScroll=()=>{const i=nearest();if(i!==cur)setActive(i);clearTimeout(endT);endT=setTimeout(settle,160);};
   prev.onclick=()=>go(base()-1); next.onclick=()=>go(base()+1);
@@ -728,32 +832,27 @@ document.querySelectorAll('.track').forEach(tr=>{
   all.forEach((it,i)=>it.addEventListener('click',()=>{i===nearest()?openLb(it.dataset.lb):go(i);}));
   tr.addEventListener('scroll',onScroll,{passive:true});
   addEventListener('resize',()=>jump(cur%N+N));
+  // desktop comfort: drag with the mouse, ← → keys, horizontal trackpad swipe works natively
+  let dx=0,startX=0,startL=0,startI=0,down=false,moved=false;
+  tr.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;down=true;moved=false;startX=e.clientX;startL=tr.scrollLeft;startI=nearest();dx=0;});
+  addEventListener('pointermove',e=>{if(!down)return;dx=e.clientX-startX;if(Math.abs(dx)>4&&!moved){moved=true;tr.classList.add('dragging');}if(moved)tr.scrollLeft=startL-dx;});
+  addEventListener('pointerup',()=>{if(!down)return;down=false;if(!moved)return;tr.classList.remove('dragging');
+    const i=nearest(), step=Math.abs(dx)>40&&i===startI?(dx<0?1:-1):0; go(i+step);});
+  tr.addEventListener('click',e=>{if(moved){e.stopPropagation();e.preventDefault();moved=false;}},true);
+  const sl=tr.closest('.slider'); sl.tabIndex=0; sl.setAttribute('aria-label','Отзывы: листайте стрелками ← →');
+  sl.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(base()+1);}else if(e.key==='ArrowLeft'){e.preventDefault();go(base()-1);}});
+  sl.addEventListener('mouseenter',()=>{if(document.activeElement===document.body)sl.focus({preventScroll:true});});
   jump(N);
 });
 
-// FAQ: smooth open/close, one at a time
-const qas=[...document.querySelectorAll('.qa')];
-const animQa=(q,open)=>{
-  const a=q.querySelector('.a');
-  if(reduce){q.open=open;return;}
-  if(open){q.open=true;const h=a.scrollHeight;a.animate([{height:'0px',opacity:0},{height:h+'px',opacity:1}],{duration:420,easing:'cubic-bezier(.22,.8,.24,1)'});}
-  else{const h=a.scrollHeight;const an=a.animate([{height:h+'px',opacity:1},{height:'0px',opacity:0}],{duration:320,easing:'ease'});an.onfinish=()=>{q.open=false;};}
-};
-qas.forEach(q=>q.querySelector('summary').addEventListener('click',e=>{
-  e.preventDefault();
-  if(q.open){animQa(q,false);return;}
-  qas.forEach(o=>{if(o!==q&&o.open)animQa(o,false);});
-  animQa(q,true);
-}));
-
-// reveal on scroll (staggered)
-document.querySelectorAll('.pills,.cols2,.app-grid,.tiles').forEach(g=>[...g.children].forEach((c,i)=>{c.classList.add('rv');c.style.setProperty('--d',(i*0.09)+'s');}));
-if('IntersectionObserver' in window&&!reduce){
+// reveal on scroll (staggered groups)
+document.querySelectorAll('.principles,.facts,.edu').forEach(g=>[...g.children].forEach((c,i)=>{c.classList.add('rv');c.style.setProperty('--d',(i*0.08)+'s');}));
+const revealTargets=[...document.querySelectorAll('.rv'),document.querySelector('.philo')];
+if('IntersectionObserver' in window){
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;t.classList.add('in');io.unobserve(t);
-    // after the reveal finishes, drop the reveal transition so hover effects stay instant
-    setTimeout(()=>{t.classList.remove('rv','in');t.style.removeProperty('--d');},1300+parseFloat(t.style.getPropertyValue('--d')||0)*1000);}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-}else document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+    if(t.classList.contains('rv'))setTimeout(()=>{t.classList.remove('rv','in');t.style.removeProperty('--d');},1400+parseFloat(t.style.getPropertyValue('--d')||0)*1000);}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  revealTargets.forEach(el=>io.observe(el));
+}else revealTargets.forEach(el=>el.classList.add('in'));
 </script>
 </body>
 </html>
