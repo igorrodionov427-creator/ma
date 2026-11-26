@@ -10,9 +10,8 @@
 <meta property="og:description" content="Моя цель — сделать вас лучшей версией себя.">
 <meta property="og:image" content="img/hero-portrait.png">
 <meta name="theme-color" content="#F6F2EC">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
+<script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.__rv)document.documentElement.classList.add("rv-off")},2500)</script>
 <style>
 :root{
   --bg:#F6F2EC;        /* milk */
@@ -378,6 +377,8 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
   .ft-grid{grid-template-columns:1fr}
 }
 
+html:not(.js) .rv,.rv-off .rv{opacity:1!important;transform:none!important;transition:none!important}
+
 /* ONE SIZE for all section headings (Cormorant kept), everything a bit smaller */
 :root{--h:clamp(30px,3.2vw,46px)}
 body{font-size:15px;line-height:1.7}
@@ -424,6 +425,9 @@ body{font-size:15px;line-height:1.7}
 .philo-img img{width:100%;height:100%;object-fit:cover;object-position:40% 35%;filter:grayscale(1)}
 @media (max-width:900px){.philo-img{margin-top:30px}.about-photo{max-width:420px!important;justify-self:start}}
 
+/* 3 diplomas in one row */
+.trust .edu{grid-template-columns:repeat(3,1fr)!important}
+
 /* multipage */
 .menu a.on{color:var(--ink)}.menu a.on::after{right:0}
 .page-first{padding-top:190px!important}
@@ -436,7 +440,7 @@ body{font-size:15px;line-height:1.7}
 .contact{padding:120px 0!important}
 .next-pages{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:44px}
 @media (max-width:900px){.page-first{padding-top:120px!important}.statement{padding:64px 0 72px!important}.contact{padding:90px 0!important}}
-@media (max-width:600px){.trust .edu{grid-template-columns:repeat(2,1fr)!important;gap:22px 14px!important}.trust .edu .fr{aspect-ratio:3/4;padding:8px}.edu .ec{display:block!important;font-size:10px}}
+@media (max-width:600px){.trust .edu{grid-template-columns:repeat(3,1fr)!important;gap:22px 12px!important}.trust .edu .fr{aspect-ratio:3/4;padding:8px}.edu .ec{display:block!important;font-size:10px}}
 
 /* compatibility: older Safari (macOS ≤ 10.15) has no WebP and no aspect-ratio */
 picture{display:contents}
@@ -703,7 +707,7 @@ picture{display:contents}
 <div class="mbook" id="mbook"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Записаться на консультацию</a></div>
 <div class="lb" id="lb" role="dialog" aria-label="Просмотр изображения"><img alt=""></div>
 
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/lenis.min.js"></script>
 <script>
 // smooth wheel scrolling (responsive, not sluggish)
 let lenis=null;
@@ -794,6 +798,7 @@ document.querySelectorAll('.track').forEach(tr=>{
 });
 
 // reveal on scroll (staggered groups)
+window.__rv=1;
 document.querySelectorAll('.principles,.facts,.edu').forEach(g=>[...g.children].forEach((c,i)=>{c.classList.add('rv');c.style.setProperty('--d',(i*0.08)+'s');}));
 const revealTargets=[...document.querySelectorAll('.rv')];
 if('IntersectionObserver' in window){
