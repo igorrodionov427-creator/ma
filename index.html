@@ -11,28 +11,33 @@
 <meta name="theme-color" content="#F3EEE8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --beige:#F3EEE8; --beige-2:#EAE2D8;
   --green:#2F3F3B; --brown:#826043; --tan:#B39276; --caramel:#C99B6B; --caramel-d:#A9784D;
   --olive:#8FA86B; --text:#333; --ink:#262523; --muted:rgba(0,0,0,.6);
-  --head:'Oswald','Arial Narrow',sans-serif;
-  --body:'Gilroy','Montserrat',Arial,sans-serif;
+  --head:'Cormorant Garamond','Times New Roman',serif;
+  --body:'Manrope','Helvetica Neue',Arial,sans-serif;
   --wrap:1200px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+dialog.svc{overscroll-behavior:contain}
 body{font-family:var(--body);font-size:17px;line-height:1.55;color:var(--text);background:var(--beige);overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
 section{position:relative}
-.h{font-family:var(--head);font-weight:500;text-transform:uppercase;color:var(--green);letter-spacing:.005em;line-height:1.12}
-.cost-h,.price,.note-big,.svc .actions span{font-weight:500!important}
+.h{font-family:var(--head);font-weight:600;text-transform:uppercase;color:var(--green);letter-spacing:.02em;line-height:1.08}
+.h .acc,.h .acc2{font-style:italic;text-transform:none;letter-spacing:0;font-weight:500}
+.cost-h,.price,.note-big,.svc .actions span{font-weight:600!important}
 .h .acc{color:var(--tan)}
 .h .acc2{color:var(--brown)}
-.h2{font-size:clamp(38px,5vw,56px)}
+.h2{font-size:clamp(40px,5.4vw,64px)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:20px 40px;border-radius:10px;
   background:linear-gradient(180deg,var(--caramel) 0%,var(--caramel-d) 100%);color:#fff;text-decoration:none;
   font-family:var(--body);font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;
@@ -42,12 +47,13 @@ section{position:relative}
 .blob{position:absolute;pointer-events:none;z-index:0;filter:blur(10px);opacity:.75}
 
 /* ---------- HERO ---------- */
-.hero{overflow:hidden;padding:40px 0 0}
+.hero{overflow:hidden;min-height:100vh;min-height:100svh;display:flex}
 .hero::before{content:"";position:absolute;inset:0;background:url(img/silk.webp) center/cover;opacity:.22;mix-blend-mode:multiply}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:end;min-height:640px}
-.hero-text{padding:30px 0 70px}
-.hero-name{font-weight:700;font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
-.hero h1{font-size:clamp(56px,7.2vw,96px);margin:10px 0 22px}
+.hero .wrap{position:relative;z-index:1;flex:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:end;width:100%}
+.hero-text{align-self:center;padding:40px 0}
+.hero-name{font-weight:600;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--brown)}
+.hero h1{font-size:clamp(46px,5vw,78px);margin:14px 0 26px;line-height:.98}
+.hero h1 .acc2{display:block;font-size:.92em}
 .goal{display:inline-block;background:var(--brown);color:#fff;font-weight:500;font-size:16px;padding:10px 20px;border-radius:40px;margin-bottom:28px}
 .theses{list-style:none;display:grid;gap:14px;margin-bottom:36px;max-width:560px}
 .theses li{position:relative;padding-left:22px;color:#000;font-size:17px;line-height:1.45}
@@ -57,12 +63,12 @@ section{position:relative}
 .socials a{width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 18px -8px rgba(47,63,59,.35);transition:transform .2s}
 .socials a:hover{transform:translateY(-2px)}
 .socials img{width:26px;height:26px}
-.hero-visual{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:560px}
+.hero-visual{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;padding-top:40px}
 .hero-visual .ell{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:88%;max-width:520px;height:82%;
   background:url(img/hero-ellipse.webp) center top/100% 100% no-repeat;filter:blur(6px);opacity:.95}
 .hero-visual .d1{position:absolute;right:-60px;top:20px;width:340px;opacity:.9}
 .hero-visual .d2{position:absolute;left:-30px;bottom:40px;width:260px;opacity:.8}
-.hero-visual .portrait{position:relative;z-index:2;width:min(470px,90%);margin-right:12%}
+.hero-visual .portrait{position:relative;z-index:2;width:auto;height:min(86vh,86svh,760px);max-width:100%;object-fit:contain;object-position:bottom;margin-right:10%}
 .badge{position:absolute;z-index:3;right:0;bottom:44px;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);
   border-radius:14px;padding:14px 20px;box-shadow:0 14px 34px -14px rgba(47,63,59,.4);max-width:260px}
 .badge b{display:block;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
@@ -73,12 +79,12 @@ section{position:relative}
 .about .blob.b1{width:640px;right:-200px;top:-80px}
 .about .blob.b2{width:520px;left:-260px;bottom:-120px;opacity:.5}
 .about .wrap{position:relative;z-index:1}
-.about .h2{font-size:clamp(34px,4.4vw,52px);max-width:1000px}
+.about .h2{font-size:clamp(36px,4.6vw,60px);max-width:1050px}
 .cols2{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin:60px 0 80px}
 .bar{border-left:3px solid var(--olive);padding-left:22px;font-size:15.5px;line-height:1.65;color:var(--ink)}
 .bar p+p{margin-top:8px}
 .bar strong{color:var(--green)}
-.about .share{font-size:clamp(30px,3.8vw,46px);line-height:1.2}
+.about .share{font-size:clamp(30px,3.6vw,48px);line-height:1.18}
 
 /* ---------- APPROACH ---------- */
 .approach{padding:20px 0 110px;overflow:hidden}
@@ -119,7 +125,7 @@ dialog.svc[open]{animation:pop .3s cubic-bezier(.2,.8,.2,1)}
 .svc h3{font-size:clamp(36px,4.6vw,58px);margin-bottom:28px}
 .cost-h{font-family:var(--head);color:var(--caramel);font-size:clamp(30px,3.4vw,44px);text-transform:uppercase;font-weight:400;margin-bottom:16px}
 .prices{display:flex;flex-wrap:wrap;gap:16px 42px;margin-bottom:36px}
-.price{display:flex;gap:10px;align-items:flex-start;font-family:var(--head);font-size:clamp(22px,2.2vw,28px);line-height:1.15;color:var(--green);text-transform:uppercase;max-width:330px}
+.price{display:flex;gap:10px;align-items:flex-start;font-family:var(--head);font-size:clamp(23px,2.3vw,30px);line-height:1.15;color:var(--green);text-transform:uppercase;max-width:330px}
 .price img{width:22px;height:22px;margin-top:2px;flex:none}
 .price em{font-style:normal;color:var(--brown)}
 .note-big{font-family:var(--head);color:var(--brown);font-size:clamp(24px,2.6vw,34px);margin:-12px 0 32px}
@@ -171,46 +177,65 @@ dialog.svc[open]{animation:pop .3s cubic-bezier(.2,.8,.2,1)}
 .nav button:hover:not(:disabled){background:var(--caramel);color:#fff}
 .nav button:disabled{opacity:.35;cursor:default}
 .nav svg{width:20px;height:20px}
-.track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 4px 34px;margin:0 -4px;
-  scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.gal{overflow:hidden}
+.track{--sw:400px;display:flex;align-items:center;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:20px calc(50% - var(--sw)/2) 40px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
 .track::-webkit-scrollbar{display:none}
-.track>button{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start;border:0;padding:0;background:#fff;border-radius:12px;overflow:hidden;
-  cursor:zoom-in;box-shadow:0 18px 34px -22px rgba(47,63,59,.6);transition:transform .3s}
-.track>button:hover{transform:translateY(-4px)}
+.track>button{flex:0 0 var(--sw);scroll-snap-align:center;border:0;padding:0;background:#fff;border-radius:14px;overflow:hidden;cursor:pointer;
+  box-shadow:0 24px 44px -26px rgba(47,63,59,.7);opacity:.32;filter:grayscale(.55) blur(1px);transform:scale(.86);
+  transition:transform .7s cubic-bezier(.22,.8,.24,1),opacity .7s ease,filter .7s ease,box-shadow .7s ease}
+.track>button.active{opacity:1;filter:none;transform:scale(1);cursor:zoom-in;box-shadow:0 34px 60px -28px rgba(47,63,59,.75)}
+.track>button:not(.active):hover{opacity:.55}
 .track img{width:100%;height:100%;object-fit:contain;background:#fff}
 .dipl>button{aspect-ratio:3/4}
-.rev{align-items:stretch}
-.rev>button{height:460px;background:var(--beige-2);padding:14px}
+.rev{--sw:440px}
+.rev>button{height:480px;background:var(--beige-2);padding:16px}
 .rev img{background:transparent;border-radius:8px}
 .dots{display:flex;justify-content:center;gap:8px;margin-top:4px}
 .dots i{width:8px;height:8px;border-radius:50%;background:rgba(47,63,59,.2);transition:background .25s,width .25s}
 .dots i.on{background:var(--caramel);width:22px;border-radius:4px}
 
-.lb{position:fixed;inset:0;z-index:100;background:rgba(20,20,18,.88);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
-.lb.on{display:flex}
-.lb img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(20,20,18,.88);display:flex;align-items:center;justify-content:center;padding:30px;cursor:zoom-out;
+  opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s;backdrop-filter:blur(4px)}
+.lb.on{opacity:1;visibility:visible;transition:opacity .45s ease}
+.lb img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:scale(.94);transition:transform .55s cubic-bezier(.22,.8,.24,1)}
+.lb.on img{transform:none}
+dialog.svc.closing{animation:popOut .28s ease forwards}
+dialog.svc.closing::backdrop{animation:fadeOut .28s ease forwards}
+dialog.svc[open]::backdrop{animation:fadeIn .35s ease}
+@keyframes popOut{to{opacity:0;transform:translateY(14px) scale(.98)}}
+@keyframes fadeOut{to{opacity:0}}
+@keyframes fadeIn{from{opacity:0}}
+.qa .a{overflow:hidden}
+.tile,.btn,.socials a,.pill,.tg a{will-change:transform}
+.hero-text>*{animation:rise .9s cubic-bezier(.22,.8,.24,1) both}
+.hero-text>*:nth-child(2){animation-delay:.08s}.hero-text>*:nth-child(3){animation-delay:.16s}
+.hero-text>*:nth-child(4){animation-delay:.24s}.hero-text>*:nth-child(5){animation-delay:.32s}
+.hero-visual .portrait,.badge{animation:rise 1.1s cubic-bezier(.22,.8,.24,1) .2s both}
+.badge{animation-delay:.5s}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 
 footer{background:var(--green);color:rgba(255,255,255,.8);text-align:center;padding:34px 24px;font-size:14px}
 footer a{color:var(--caramel);text-decoration:none}
 footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s ease var(--d,0s),transform 1s cubic-bezier(.22,.8,.24,1) var(--d,0s)}
 .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}dialog.svc[open]{animation:none}}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:1024px){
   .tiles{grid-template-columns:repeat(2,1fr)}
   .app-grid{grid-template-columns:1fr 300px 1fr;gap:26px}
-  .track>button{flex-basis:calc((100% - 22px)/2)}
+  .track{--sw:340px}.rev{--sw:380px}
 }
 @media (max-width:860px){
-  .hero .wrap{grid-template-columns:minmax(0,1fr);min-height:0}
-  .hero h1{font-size:clamp(40px,12vw,72px)}
+  .hero{min-height:0;display:block}
+  .hero .wrap{grid-template-columns:minmax(0,1fr)}
+  .hero h1{font-size:clamp(32px,9.6vw,72px)}
   .hero-text{padding:10px 0 10px;order:1}
   .hero-visual{order:2;min-height:0;margin:0 -24px}
-  .hero-visual .portrait{width:min(420px,78%);margin:0 auto 0 6%}
+  .hero-visual .portrait{width:min(420px,78%);height:auto;margin:0 auto 0 6%}
   .badge{right:16px;bottom:20px}
   .cols2{grid-template-columns:1fr;gap:30px;margin:40px 0 56px}
   .pills{grid-template-columns:1fr}
@@ -236,9 +261,9 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   .qa .a{padding-right:0}
   .badge{max-width:220px;padding:10px 14px}
   .price{max-width:none}
-  .track{gap:14px}
-  .track>button{flex-basis:82%}
-  .rev>button{height:400px}
+  .track{gap:14px;--sw:72vw}
+  .rev{--sw:80vw}
+  .rev>button{height:420px}
   .nav button{width:44px;height:44px}
 }
 </style>
@@ -350,7 +375,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
 </section>
 
 <!-- SERVICE DIALOGS -->
-<dialog class="svc" id="s1" aria-labelledby="s1t"><div class="svc-in">
+<dialog class="svc" data-lenis-prevent id="s1" aria-labelledby="s1t"><div class="svc-in">
   <button class="close" aria-label="Закрыть">&times;</button>
   <h3 class="h" id="s1t">Разбор <span class="acc2">гардероба</span></h3>
   <div class="cost-h">Стоимость:</div>
@@ -381,7 +406,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
 </div></dialog>
 
-<dialog class="svc" id="s2" aria-labelledby="s2t"><div class="svc-in">
+<dialog class="svc" data-lenis-prevent id="s2" aria-labelledby="s2t"><div class="svc-in">
   <button class="close" aria-label="Закрыть">&times;</button>
   <h3 class="h" id="s2t">Шоппинг-<span class="acc2">сопровождение</span></h3>
   <div class="cost-h">Стоимость:</div>
@@ -410,7 +435,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
 </div></dialog>
 
-<dialog class="svc" id="s3" aria-labelledby="s3t"><div class="svc-in">
+<dialog class="svc" data-lenis-prevent id="s3" aria-labelledby="s3t"><div class="svc-in">
   <button class="close" aria-label="Закрыть">&times;</button>
   <h3 class="h" id="s3t">Стилизация <span class="acc2">комплектов</span></h3>
   <div class="cost-h">Стоимость:</div>
@@ -431,7 +456,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
 </div></dialog>
 
-<dialog class="svc" id="s4" aria-labelledby="s4t"><div class="svc-in">
+<dialog class="svc" data-lenis-prevent id="s4" aria-labelledby="s4t"><div class="svc-in">
   <button class="close" aria-label="Закрыть">&times;</button>
   <h3 class="h" id="s4t">Удаленный <span class="acc2">шоппинг</span></h3>
   <div class="cost-h">Стоимость:</div>
@@ -458,7 +483,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
 </div></dialog>
 
-<dialog class="svc" id="s5" aria-labelledby="s5t"><div class="svc-in">
+<dialog class="svc" data-lenis-prevent id="s5" aria-labelledby="s5t"><div class="svc-in">
   <button class="close" aria-label="Закрыть">&times;</button>
   <h3 class="h" id="s5t">Консультации <span class="acc2">(только онлайн)</span></h3>
   <div class="cost-h">Стоимость:</div>
@@ -483,7 +508,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
 </div></dialog>
 
-<dialog class="svc" id="s6" aria-labelledby="s6t"><div class="svc-in">
+<dialog class="svc" data-lenis-prevent id="s6" aria-labelledby="s6t"><div class="svc-in">
   <button class="close" aria-label="Закрыть">&times;</button>
   <h3 class="h" id="s6t">Лекции</h3>
   <div class="cost-h">Стоимость:</div>
@@ -498,7 +523,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
 </div></dialog>
 
-<dialog class="svc" id="s7" aria-labelledby="s7t"><div class="svc-in">
+<dialog class="svc" data-lenis-prevent id="s7" aria-labelledby="s7t"><div class="svc-in">
   <button class="close" aria-label="Закрыть">&times;</button>
   <h3 class="h" id="s7t">Сопровождение <span class="acc2">фотосъемки</span></h3>
   <div class="cost-h">Стоимость:</div>
@@ -519,7 +544,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   <div class="actions"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
 </div></dialog>
 
-<dialog class="svc" id="s8" aria-labelledby="s8t"><div class="svc-in">
+<dialog class="svc" data-lenis-prevent id="s8" aria-labelledby="s8t"><div class="svc-in">
   <button class="close" aria-label="Закрыть">&times;</button>
   <h3 class="h" id="s8t">Подбор образов <span class="acc2">на мероприятие или фотосъемку</span></h3>
   <div class="cost-h">Стоимость:</div>
@@ -573,10 +598,10 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   <div class="wrap">
     <div class="gal-head"><h2 class="h h2 rv">Образование</h2><div class="nav" data-for="dipl"></div></div>
     <div class="track dipl" id="dipl">
-      <button data-lb="img/diploma-1.webp" aria-label="Открыть диплом 1"><img src="img/diploma-1.webp" alt="Диплом стилиста-имиджмейкера" loading="lazy"></button>
-      <button data-lb="img/diploma-2.webp" aria-label="Открыть диплом 2"><img src="img/diploma-2.webp" alt="Диплом / сертификат" loading="lazy"></button>
-      <button data-lb="img/diploma-3.webp" aria-label="Открыть диплом 3"><img src="img/diploma-3.webp" alt="Диплом / сертификат" loading="lazy"></button>
-      <button data-lb="img/diploma-4.webp" aria-label="Открыть диплом 4"><img src="img/diploma-4.webp" alt="Диплом / сертификат" loading="lazy"></button>
+      <button data-lb="img/diploma-1.webp" aria-label="Открыть диплом 1"><img src="img/diploma-1.webp" alt="Диплом стилиста-имиджмейкера"></button>
+      <button data-lb="img/diploma-2.webp" aria-label="Открыть диплом 2"><img src="img/diploma-2.webp" alt="Диплом / сертификат"></button>
+      <button data-lb="img/diploma-3.webp" aria-label="Открыть диплом 3"><img src="img/diploma-3.webp" alt="Диплом / сертификат"></button>
+      <button data-lb="img/diploma-4.webp" aria-label="Открыть диплом 4"><img src="img/diploma-4.webp" alt="Диплом / сертификат"></button>
     </div>
     <div class="dots" data-for="dipl"></div>
   </div>
@@ -587,11 +612,11 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   <div class="wrap">
     <div class="gal-head"><h2 class="h h2 rv">Отзывы</h2><div class="nav" data-for="rev"></div></div>
     <div class="track rev" id="rev">
-      <button data-lb="img/review-2.webp" aria-label="Открыть отзыв"><img src="img/review-2.webp" alt="Отзыв клиента" loading="lazy"></button>
-      <button data-lb="img/review-1.webp" aria-label="Открыть отзыв"><img src="img/review-1.webp" alt="Отзыв клиента" loading="lazy"></button>
-      <button data-lb="img/review-4.webp" aria-label="Открыть отзыв"><img src="img/review-4.webp" alt="Отзыв клиента" loading="lazy"></button>
-      <button data-lb="img/review-3.webp" aria-label="Открыть отзыв"><img src="img/review-3.webp" alt="Отзыв клиента" loading="lazy"></button>
-      <button data-lb="img/review-5.webp" aria-label="Открыть отзыв"><img src="img/review-5.webp" alt="Отзыв клиента" loading="lazy"></button>
+      <button data-lb="img/review-2.webp" aria-label="Открыть отзыв"><img src="img/review-2.webp" alt="Отзыв клиента"></button>
+      <button data-lb="img/review-1.webp" aria-label="Открыть отзыв"><img src="img/review-1.webp" alt="Отзыв клиента"></button>
+      <button data-lb="img/review-4.webp" aria-label="Открыть отзыв"><img src="img/review-4.webp" alt="Отзыв клиента"></button>
+      <button data-lb="img/review-3.webp" aria-label="Открыть отзыв"><img src="img/review-3.webp" alt="Отзыв клиента"></button>
+      <button data-lb="img/review-5.webp" aria-label="Открыть отзыв"><img src="img/review-5.webp" alt="Отзыв клиента"></button>
     </div>
     <div class="dots" data-for="rev"></div>
     <div style="text-align:center;margin-top:40px"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
@@ -605,47 +630,84 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
 
 <div class="lb" id="lb" role="dialog" aria-label="Просмотр изображения"><img alt=""></div>
 
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
-// service dialogs
+const reduce=false; // плавность включена всегда (по просьбе владельца сайта)
+// smooth wheel scrolling
+let lenis=null;
+if(window.Lenis&&!reduce){
+  lenis=new Lenis({duration:1.25,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,wheelMultiplier:.9,anchors:true});
+  const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf);
+}
+const lockScroll=on=>{if(lenis)on?lenis.stop():lenis.start();};
+
+// service dialogs (open / animated close)
 document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{
-  const d=document.getElementById(b.dataset.open); d.showModal(); d.scrollTop=0;
+  const d=document.getElementById(b.dataset.open); d.classList.remove('closing'); d.showModal(); d.scrollTop=0; lockScroll(true);
 }));
+const closeDlg=d=>{if(!d.open||d.classList.contains('closing'))return; d.classList.add('closing');
+  setTimeout(()=>{d.close();d.classList.remove('closing');},reduce?0:270);};
 document.querySelectorAll('dialog.svc').forEach(d=>{
-  d.querySelector('.close').addEventListener('click',()=>d.close());
-  d.addEventListener('click',e=>{if(e.target===d)d.close();});
+  d.querySelector('.close').addEventListener('click',()=>closeDlg(d));
+  d.addEventListener('click',e=>{if(e.target===d)closeDlg(d);});
+  d.addEventListener('cancel',e=>{e.preventDefault();closeDlg(d);});
+  d.addEventListener('close',()=>lockScroll(false));
 });
+
 // lightbox
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
-document.querySelectorAll('[data-lb]').forEach(b=>b.addEventListener('click',()=>{lbi.src=b.dataset.lb;lb.classList.add('on');}));
-lb.addEventListener('click',()=>lb.classList.remove('on'));
-addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on');});
-// sliders (education, reviews)
+const openLb=src=>{lbi.src=src;lb.classList.add('on');lockScroll(true);};
+const closeLb=()=>{if(!lb.classList.contains('on'))return;lb.classList.remove('on');lockScroll(false);};
+lb.addEventListener('click',closeLb);
+addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+
+// sliders: centered active slide, neighbours dimmed
 const ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>';
 document.querySelectorAll('.track').forEach(tr=>{
   const nav=document.querySelector('.nav[data-for="'+tr.id+'"]'), dots=document.querySelector('.dots[data-for="'+tr.id+'"]');
   const items=[...tr.children];
   nav.innerHTML='<button aria-label="Назад">'+ARROW+'</button><button aria-label="Вперёд" style="transform:scaleX(-1)">'+ARROW+'</button>';
-  const [prev,next]=nav.children;
-  const step=()=>items[0].getBoundingClientRect().width+parseFloat(getComputedStyle(tr).columnGap||22);
-  prev.onclick=()=>tr.scrollBy({left:-step()});
-  next.onclick=()=>tr.scrollBy({left:step()});
+  dots.innerHTML=items.map((_,i)=>'<i role="button" aria-label="Слайд '+(i+1)+'"></i>').join('');
+  const [prev,next]=nav.children; let cur=-1;
+  const go=i=>{i=Math.max(0,Math.min(items.length-1,i));const it=items[i];
+    tr.scrollTo({left:it.offsetLeft-(tr.clientWidth-it.offsetWidth)/2,behavior:reduce?'auto':'smooth'});};
   const upd=()=>{
-    const max=tr.scrollWidth-tr.clientWidth;
-    prev.disabled=tr.scrollLeft<4; next.disabled=tr.scrollLeft>max-4;
-    nav.style.visibility=max<4?'hidden':'visible';
-    const pages=Math.max(1,Math.round(max/step())+1), cur=Math.round(tr.scrollLeft/step());
-    if(dots.children.length!==pages){dots.innerHTML='<i></i>'.repeat(pages);}
-    dots.style.display=pages>1?'flex':'none';
-    [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===Math.min(cur,pages-1)));
+    const c=tr.scrollLeft+tr.clientWidth/2; let best=0,bd=1e9;
+    items.forEach((it,i)=>{const d=Math.abs(it.offsetLeft+it.offsetWidth/2-c);if(d<bd){bd=d;best=i;}});
+    if(best===cur)return; cur=best;
+    items.forEach((it,i)=>it.classList.toggle('active',i===cur));
+    [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur));
+    prev.disabled=cur===0; next.disabled=cur===items.length-1;
   };
+  prev.onclick=()=>go(cur-1); next.onclick=()=>go(cur+1);
+  [...dots.children].forEach((d,i)=>d.onclick=()=>go(i));
+  items.forEach((it,i)=>it.addEventListener('click',()=>{i===cur?openLb(it.dataset.lb):go(i);}));
   tr.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
-  addEventListener('resize',upd); upd();
+  addEventListener('resize',()=>{cur=-1;upd();});
+  upd();
 });
-// FAQ: one open at a time
-document.querySelectorAll('.qa').forEach(q=>q.addEventListener('toggle',()=>{if(q.open)document.querySelectorAll('.qa').forEach(o=>{if(o!==q)o.open=false;});}));
-// reveal on scroll
-if('IntersectionObserver' in window){
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+
+// FAQ: smooth open/close, one at a time
+const qas=[...document.querySelectorAll('.qa')];
+const animQa=(q,open)=>{
+  const a=q.querySelector('.a');
+  if(reduce){q.open=open;return;}
+  if(open){q.open=true;const h=a.scrollHeight;a.animate([{height:'0px',opacity:0},{height:h+'px',opacity:1}],{duration:420,easing:'cubic-bezier(.22,.8,.24,1)'});}
+  else{const h=a.scrollHeight;const an=a.animate([{height:h+'px',opacity:1},{height:'0px',opacity:0}],{duration:320,easing:'ease'});an.onfinish=()=>{q.open=false;};}
+};
+qas.forEach(q=>q.querySelector('summary').addEventListener('click',e=>{
+  e.preventDefault();
+  if(q.open){animQa(q,false);return;}
+  qas.forEach(o=>{if(o!==q&&o.open)animQa(o,false);});
+  animQa(q,true);
+}));
+
+// reveal on scroll (staggered)
+document.querySelectorAll('.pills,.cols2,.app-grid,.tiles').forEach(g=>[...g.children].forEach((c,i)=>{c.classList.add('rv');c.style.setProperty('--d',(i*0.09)+'s');}));
+if('IntersectionObserver' in window&&!reduce){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;t.classList.add('in');io.unobserve(t);
+    // after the reveal finishes, drop the reveal transition so hover effects stay instant
+    setTimeout(()=>{t.classList.remove('rv','in');t.style.removeProperty('--d');},1300+parseFloat(t.style.getPropertyValue('--d')||0)*1000);}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 }else document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
 </script>
