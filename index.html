@@ -24,7 +24,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--body);font-size:17px;line-height:1.55;color:var(--text);background:var(--beige);overflow-x:hidden}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
 section{position:relative}
@@ -62,7 +62,7 @@ section{position:relative}
   background:url(img/hero-ellipse.webp) center top/100% 100% no-repeat;filter:blur(6px);opacity:.95}
 .hero-visual .d1{position:absolute;right:-60px;top:20px;width:340px;opacity:.9}
 .hero-visual .d2{position:absolute;left:-30px;bottom:40px;width:260px;opacity:.8}
-.hero-visual .portrait{position:relative;z-index:2;width:118%;max-width:none;margin:0 -9%;}
+.hero-visual .portrait{position:relative;z-index:2;width:min(470px,90%);margin-right:12%}
 .badge{position:absolute;z-index:3;right:0;bottom:44px;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);
   border-radius:14px;padding:14px 20px;box-shadow:0 14px 34px -14px rgba(47,63,59,.4);max-width:260px}
 .badge b{display:block;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
@@ -163,13 +163,28 @@ dialog.svc[open]{animation:pop .3s cubic-bezier(.2,.8,.2,1)}
 /* ---------- GALLERIES ---------- */
 .gal{padding:30px 0 100px}
 .gal .h2{margin-bottom:40px;font-size:clamp(36px,4vw,50px)}
-.dipl{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:start}
-.dipl button,.rev button{border:0;padding:0;background:#fff;border-radius:12px;overflow:hidden;cursor:zoom-in;box-shadow:0 18px 34px -22px rgba(47,63,59,.6);transition:transform .3s}
-.dipl button:hover,.rev button:hover{transform:translateY(-4px)}
-.dipl img{width:100%;aspect-ratio:3/4;object-fit:contain;background:#fff}
-.rev{columns:3 300px;column-gap:22px}
-.rev button{display:block;width:100%;margin:0 0 22px;break-inside:avoid}
-.rev img{width:100%}
+.gal-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:34px}
+.gal-head .h2{margin-bottom:0}
+.nav{display:flex;gap:10px;flex:none}
+.nav button{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--caramel);background:transparent;color:var(--caramel-d);cursor:pointer;
+  display:grid;place-items:center;transition:background .25s,color .25s,opacity .25s}
+.nav button:hover:not(:disabled){background:var(--caramel);color:#fff}
+.nav button:disabled{opacity:.35;cursor:default}
+.nav svg{width:20px;height:20px}
+.track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 4px 34px;margin:0 -4px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.track::-webkit-scrollbar{display:none}
+.track>button{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start;border:0;padding:0;background:#fff;border-radius:12px;overflow:hidden;
+  cursor:zoom-in;box-shadow:0 18px 34px -22px rgba(47,63,59,.6);transition:transform .3s}
+.track>button:hover{transform:translateY(-4px)}
+.track img{width:100%;height:100%;object-fit:contain;background:#fff}
+.dipl>button{aspect-ratio:3/4}
+.rev{align-items:stretch}
+.rev>button{height:460px;background:var(--beige-2);padding:14px}
+.rev img{background:transparent;border-radius:8px}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:4px}
+.dots i{width:8px;height:8px;border-radius:50%;background:rgba(47,63,59,.2);transition:background .25s,width .25s}
+.dots i.on{background:var(--caramel);width:22px;border-radius:4px}
 
 .lb{position:fixed;inset:0;z-index:100;background:rgba(20,20,18,.88);display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
 .lb.on{display:flex}
@@ -188,14 +203,14 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
 @media (max-width:1024px){
   .tiles{grid-template-columns:repeat(2,1fr)}
   .app-grid{grid-template-columns:1fr 300px 1fr;gap:26px}
-  .dipl{grid-template-columns:repeat(2,1fr)}
+  .track>button{flex-basis:calc((100% - 22px)/2)}
 }
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:minmax(0,1fr);min-height:0}
   .hero h1{font-size:clamp(40px,12vw,72px)}
   .hero-text{padding:10px 0 10px;order:1}
   .hero-visual{order:2;min-height:0;margin:0 -24px}
-  .hero-visual .portrait{width:100%;margin:0}
+  .hero-visual .portrait{width:min(420px,78%);margin:0 auto 0 6%}
   .badge{right:16px;bottom:20px}
   .cols2{grid-template-columns:1fr;gap:30px;margin:40px 0 56px}
   .pills{grid-template-columns:1fr}
@@ -221,6 +236,10 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
   .qa .a{padding-right:0}
   .badge{max-width:220px;padding:10px 14px}
   .price{max-width:none}
+  .track{gap:14px}
+  .track>button{flex-basis:82%}
+  .rev>button{height:400px}
+  .nav button{width:44px;height:44px}
 }
 </style>
 </head>
@@ -251,7 +270,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
       <img class="d1" src="img/decor-1.webp" alt="" aria-hidden="true">
       <img class="d2" src="img/decor-2.webp" alt="" aria-hidden="true">
       <div class="ell" aria-hidden="true"></div>
-      <img class="portrait" src="img/hero-portrait.webp" width="1100" height="734" alt="Надежда Родионова, персональный стилист">
+      <img class="portrait" src="img/hero-portrait.webp" width="650" height="788" alt="Надежда Родионова, персональный стилист">
       <div class="badge"><b>Надежда Родионова</b><span>Персональный стилист<br>Диплом стилиста имиджмейкера</span></div>
     </div>
   </div>
@@ -301,7 +320,7 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
         <div class="ell" aria-hidden="true"></div>
         <img class="arr a1" src="img/arrows.svg" alt="" aria-hidden="true">
         <img class="arr a2" src="img/arrows.svg" alt="" aria-hidden="true">
-        <img class="p" src="img/about-portrait.webp" width="700" height="1049" alt="Надежда Родионова" loading="lazy">
+        <img class="p" src="img/about-portrait.webp" width="644" height="1120" alt="Надежда Родионова" loading="lazy">
       </div>
       <div class="right rv">
         <p><strong>Знаю про сегмент люкс все, даже как купить самую желанную сумку в мире без байеров.</strong></p>
@@ -552,27 +571,29 @@ footer .f-links{display:flex;justify-content:center;gap:22px;margin-bottom:10px}
 <!-- EDUCATION -->
 <section class="gal">
   <div class="wrap">
-    <h2 class="h h2 rv">Образование</h2>
-    <div class="dipl">
+    <div class="gal-head"><h2 class="h h2 rv">Образование</h2><div class="nav" data-for="dipl"></div></div>
+    <div class="track dipl" id="dipl">
       <button data-lb="img/diploma-1.webp" aria-label="Открыть диплом 1"><img src="img/diploma-1.webp" alt="Диплом стилиста-имиджмейкера" loading="lazy"></button>
       <button data-lb="img/diploma-2.webp" aria-label="Открыть диплом 2"><img src="img/diploma-2.webp" alt="Диплом / сертификат" loading="lazy"></button>
       <button data-lb="img/diploma-3.webp" aria-label="Открыть диплом 3"><img src="img/diploma-3.webp" alt="Диплом / сертификат" loading="lazy"></button>
       <button data-lb="img/diploma-4.webp" aria-label="Открыть диплом 4"><img src="img/diploma-4.webp" alt="Диплом / сертификат" loading="lazy"></button>
     </div>
+    <div class="dots" data-for="dipl"></div>
   </div>
 </section>
 
 <!-- REVIEWS -->
 <section class="gal" style="padding-top:0">
   <div class="wrap">
-    <h2 class="h h2 rv">Отзывы</h2>
-    <div class="rev">
+    <div class="gal-head"><h2 class="h h2 rv">Отзывы</h2><div class="nav" data-for="rev"></div></div>
+    <div class="track rev" id="rev">
       <button data-lb="img/review-2.webp" aria-label="Открыть отзыв"><img src="img/review-2.webp" alt="Отзыв клиента" loading="lazy"></button>
       <button data-lb="img/review-1.webp" aria-label="Открыть отзыв"><img src="img/review-1.webp" alt="Отзыв клиента" loading="lazy"></button>
       <button data-lb="img/review-4.webp" aria-label="Открыть отзыв"><img src="img/review-4.webp" alt="Отзыв клиента" loading="lazy"></button>
       <button data-lb="img/review-3.webp" aria-label="Открыть отзыв"><img src="img/review-3.webp" alt="Отзыв клиента" loading="lazy"></button>
       <button data-lb="img/review-5.webp" aria-label="Открыть отзыв"><img src="img/review-5.webp" alt="Отзыв клиента" loading="lazy"></button>
     </div>
+    <div class="dots" data-for="rev"></div>
     <div style="text-align:center;margin-top:40px"><a class="btn" href="https://t.me/Nadezhda_my_style" target="_blank" rel="noopener">Забронировать дату</a></div>
   </div>
 </section>
@@ -598,6 +619,28 @@ const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
 document.querySelectorAll('[data-lb]').forEach(b=>b.addEventListener('click',()=>{lbi.src=b.dataset.lb;lb.classList.add('on');}));
 lb.addEventListener('click',()=>lb.classList.remove('on'));
 addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on');});
+// sliders (education, reviews)
+const ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>';
+document.querySelectorAll('.track').forEach(tr=>{
+  const nav=document.querySelector('.nav[data-for="'+tr.id+'"]'), dots=document.querySelector('.dots[data-for="'+tr.id+'"]');
+  const items=[...tr.children];
+  nav.innerHTML='<button aria-label="Назад">'+ARROW+'</button><button aria-label="Вперёд" style="transform:scaleX(-1)">'+ARROW+'</button>';
+  const [prev,next]=nav.children;
+  const step=()=>items[0].getBoundingClientRect().width+parseFloat(getComputedStyle(tr).columnGap||22);
+  prev.onclick=()=>tr.scrollBy({left:-step()});
+  next.onclick=()=>tr.scrollBy({left:step()});
+  const upd=()=>{
+    const max=tr.scrollWidth-tr.clientWidth;
+    prev.disabled=tr.scrollLeft<4; next.disabled=tr.scrollLeft>max-4;
+    nav.style.visibility=max<4?'hidden':'visible';
+    const pages=Math.max(1,Math.round(max/step())+1), cur=Math.round(tr.scrollLeft/step());
+    if(dots.children.length!==pages){dots.innerHTML='<i></i>'.repeat(pages);}
+    dots.style.display=pages>1?'flex':'none';
+    [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===Math.min(cur,pages-1)));
+  };
+  tr.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
+  addEventListener('resize',upd); upd();
+});
 // FAQ: one open at a time
 document.querySelectorAll('.qa').forEach(q=>q.addEventListener('toggle',()=>{if(q.open)document.querySelectorAll('.qa').forEach(o=>{if(o!==q)o.open=false;});}));
 // reveal on scroll
