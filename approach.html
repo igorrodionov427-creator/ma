@@ -283,6 +283,14 @@ footer ul a{transition:color .3s}footer ul a:hover{color:var(--accent)}
 @media (max-width:900px){.q-list,.q-cta{margin-left:0}}
 @media (max-width:600px){.q-list li{grid-template-columns:1fr;gap:8px;padding:22px 0}.q-cta .btn{width:100%}.q-cta{justify-content:center}}
 
+/* toast: «почта скопирована» (desktop) */
+.toast{position:fixed;left:50%;bottom:32px;z-index:120;transform:translate(-50%,16px);opacity:0;pointer-events:none;
+  background:var(--ink);color:var(--bg);padding:14px 22px;font-size:13px;letter-spacing:.02em;line-height:1.4;display:flex;gap:12px;align-items:center;
+  transition:opacity .45s var(--ease),transform .45s var(--ease);white-space:nowrap}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast b{font-weight:600}
+.toast i{font-style:normal;color:var(--accent)}
+
 /* mobile sticky booking */
 .mbook{position:fixed;left:16px;right:16px;bottom:16px;z-index:40;display:none;transform:translateY(140%);transition:transform .6s var(--ease)}
 .mbook.on{transform:none}
@@ -607,6 +615,23 @@ document.querySelectorAll('.track').forEach(tr=>{
   sl.addEventListener('mouseenter',()=>{if(document.activeElement===document.body)sl.focus({preventScroll:true});});
   jump(N);
 });
+
+// e-mail: on a computer copy the address + show a note; on a phone open the mail app (default mailto)
+const isTouch=matchMedia('(hover: none) and (pointer: coarse)').matches;
+let toastEl=null,toastT=0;
+const toast=html=>{if(!toastEl){toastEl=document.createElement('div');toastEl.className='toast';toastEl.setAttribute('role','status');document.body.appendChild(toastEl);}
+  toastEl.innerHTML=html;toastEl.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>toastEl.classList.remove('on'),2600);};
+const execCopy=t=>{const ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;top:0;opacity:0';
+  document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy');}catch(e){}ta.remove();return ok;};
+const copyText=t=>(navigator.clipboard&&window.isSecureContext?navigator.clipboard.writeText(t):Promise.reject())
+  .catch(()=>{if(!execCopy(t))throw new Error('copy blocked');});
+document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.addEventListener('click',e=>{
+  if(isTouch)return;                       // phone/tablet → mail app
+  e.preventDefault();
+  const mail=a.getAttribute('href').slice(7).split('?')[0];
+  copyText(mail).then(()=>toast('<i>✓</i><span>Почта скопирована: <b>'+mail+'</b></span>'))
+               .catch(()=>toast('<span>Почта: <b style="user-select:all">'+mail+'</b></span>'));
+}));
 
 // reveal on scroll (staggered groups)
 window.__rv=1;
